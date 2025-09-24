@@ -1,0 +1,29 @@
+.info-cards-container {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  padding: 0 16px;
+}
+
+.info-card {
+  border-radius: 16px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+}
+
+.info-card-header {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 16px;
+}
+
+.info-card-icon {
+  font-size: 24px;
+  color: #3880ff;
+}
+
+.info-card-content {
+  padding: 0 16px 16px 16px;
+  color: #555;
+  font-size: 14px;
+}

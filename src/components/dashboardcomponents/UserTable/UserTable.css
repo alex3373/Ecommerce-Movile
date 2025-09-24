@@ -1,0 +1,57 @@
+.user-table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.user-table td {
+  padding: 12px;
+  text-align: left;
+  border-bottom: 1px solid #ddd;
+  vertical-align: middle;
+  color: #333;
+}
+
+.avatar-name-cell {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 6px;
+}
+
+.user-name {
+  font-weight: 500;
+  font-size: 14px;
+  text-align: center;
+}
+
+.user-row {
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.user-row.expanded {
+  background-color: #a3c1d7;
+  transform: scale(1.03);
+}
+
+.status-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  border: none;
+  border-radius: 999px;
+  padding: 6px 12px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.status-pill.active {
+  background-color: #d4f5d4;
+  color: #2e7d32;
+}
+
+.status-pill.inactive {
+  background-color: #fcdada;
+  color: #c62828;
+}

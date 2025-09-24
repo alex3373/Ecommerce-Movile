@@ -1,0 +1,46 @@
+/* src/pages/SplashScreen.css */
+
+.ion-content {
+  --background: #ffffff; /* fondo blanco o ajusta a tu color de marca */
+}
+
+.splash-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  text-align: center;
+  animation: fadeIn 1s ease-in-out;
+}
+
+.splash-container img {
+  width: 160px;
+  height: auto;
+  margin-bottom: 20px;
+  animation: float 2.5s ease-in-out infinite;
+}
+
+.splash-container h1 {
+  font-size: 24px;
+  font-weight: bold;
+  color: #333;
+  margin-bottom: 10px;
+}
+
+.splash-container p {
+  font-size: 16px;
+  color: #777;
+}
+
+/* Animaciones */
+@keyframes float {
+  0% { transform: translateY(0px); }
+  50% { transform: translateY(-10px); }
+  100% { transform: translateY(0px); }
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to   { opacity: 1; }
+}

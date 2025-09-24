@@ -1,0 +1,111 @@
+.auditoria-card {
+    margin: 24px;
+    border-radius: 16px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+}
+
+/* Centrado y margen del título */
+ion-card-title {
+    text-align: center;
+    margin-top: 16px;
+    margin-bottom: 16px;
+    font-size: 1.2rem;
+    font-weight: bold;
+}
+
+/* Estructura general de la tabla */
+.tabla-auditoria {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin-top: 10px;
+    font-size: 0.9rem;
+}
+
+/* Cada fila */
+.fila {
+    display: flex;
+    border-bottom: 1px solid #ddd;
+    padding: 8px 0;
+    align-items: center;
+}
+
+/* Fila de encabezado */
+.fila.encabezado {
+    font-weight: bold;
+    background-color: #f1f1f1;
+    border-radius: 8px;
+    padding: 12px;
+}
+
+/* Cada columna */
+.col {
+    flex: 1;
+    padding: 4px 8px;
+    display: flex;
+    align-items: center;
+    word-break: break-word;
+}
+
+/* Tipos de evento con color */
+.tipo-iniciodesesión {
+    color: #0070f3;
+    font-weight: bold;
+}
+
+.tipo-registro {
+    color: #10b981;
+    font-weight: bold;
+}
+
+.tipo-compra {
+    color: #f59e0b;
+    font-weight: bold;
+}
+
+.tipo-cierredesesión {
+    color: #ef4444;
+    font-weight: bold;
+}
+
+/* Mejora para el input */
+.buscador-item {
+    margin-bottom: 12px;
+    border-radius: 8px;
+    --background: #f1f1f1;
+}
+
+/* Aumenta separación entre columnas */
+.tabla-auditoria .col {
+    padding: 8px 12px;
+    font-size: 14px;
+}
+
+/* Resalta búsqueda */
+.fila:hover {
+    background-color: #f8f8f8;
+    transition: background 0.2s;
+}
+
+/* Estilo para la X de limpiar búsqueda */
+.clear-icon {
+    font-size: 22px;
+    color: #999;
+    cursor: pointer;
+    transition: color 0.2s;
+}
+
+.clear-icon:hover {
+    color: #222;
+}
+
+/* Responsive (opcional) */
+@media (max-width: 600px) {
+    .col {
+        font-size: 0.8rem;
+    }
+
+    .fila.encabezado {
+        font-size: 0.9rem;
+    }
+}

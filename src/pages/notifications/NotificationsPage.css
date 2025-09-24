@@ -1,0 +1,39 @@
+.notification-item {
+  border-radius: 10px;
+  margin: 10px;
+  background: #ffffff;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+  transition: background 0.3s, transform 0.2s;
+}
+
+.notification-item:hover {
+  background: #f0f4ff;
+  transform: translateY(-2px);
+}
+
+.notification-title {
+  font-weight: bold;
+  margin-bottom: 4px;
+  color: #000;
+  transition: color 0.3s;
+}
+
+.notification-title.read {
+  font-weight: normal;
+  color: #555;
+}
+
+.notification-message {
+  font-size: 14px;
+  color: #555;
+}
+
+.badge-nuevo {
+  margin-right: 5px;
+}
+
+.empty-state {
+  padding: 20px;
+  text-align: center;
+  color: #888;
+}

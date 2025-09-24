@@ -1,0 +1,57 @@
+.bubble-chat-list {
+  display: flex;
+  flex-direction: column;
+  padding: 10px;
+}
+
+.bubble-chat-item {
+  display: flex;
+  align-items: center;
+  border-radius: 15px;
+  background: #f0f0f0;
+  padding: 10px;
+  margin-bottom: 10px;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+.bubble-chat-item:hover {
+  background: #e0e0e0;
+}
+
+.bubble-chat-content {
+  margin-left: 10px;
+  flex: 1;
+}
+
+.chat-container {
+  display: flex;
+  flex-direction: column;
+  padding: 10px;
+}
+
+.chat-bubble {
+  max-width: 80%;
+  padding: 10px 15px;
+  border-radius: 20px;
+  margin: 8px 0;
+  word-break: break-word;
+}
+
+.bubble-client {
+  background-color: #dcf8c6;
+  align-self: flex-end;
+  margin-left: auto;
+}
+
+.bubble-vendor {
+  background-color: #f1f0f0;
+  align-self: flex-start;
+  margin-right: auto;
+}
+
+.bubble-avatar {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+}

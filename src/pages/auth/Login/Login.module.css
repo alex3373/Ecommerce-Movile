@@ -1,0 +1,105 @@
+/* Estilos para el logo */
+.logoContainer {
+  display: flex;
+  justify-content: center;
+  margin-top: 1.5rem; /* margen superior */
+  margin-bottom: 1.5rem; /* margen inferior */
+}
+
+.logo {
+  width: 150px;
+  height: auto;
+}
+
+/* Estilos para formulario */
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem; /* gap entre los elementos */
+  margin-top: 2rem;
+  width: 100%;
+  max-width: 400px;
+  margin-left: auto;
+  margin-right: auto;
+  padding: 0 1rem;
+}
+
+/* Estilos para "ForgotPassword" */
+.forgotPasswordLink {
+  text-align: center;
+}
+
+.forgotPasswordLink a {
+  color: #3880ff;
+  font-weight: bold;
+  text-decoration: none;
+}
+
+.forgotPasswordLink a:hover {
+  text-decoration: underline;
+}
+
+/* Estilos para el botón "Iniciar sesión" */
+form ion-button[type="submit"] {
+  --background: #3880ff;
+  --border-radius: 8px;
+  --padding-start: 24px;
+  --padding-end: 24px;
+  --font-size: 16px;
+  margin-top: 1rem; /* margen superior */
+  font-weight: bold;
+  text-transform: none; /* quitar uppercase de texto */
+}
+
+/* Botón deshabilitado */
+form ion-button[type="submit"].disabledButton {
+  --background: #b8d8ff;
+  --color: #8f9bb3;
+  cursor: not-allowed;
+}
+
+/* Estilos para los mensajes de error */
+.error {
+  color: red;
+  font-size: 14px;
+  text-align: center;
+  margin-top: 1rem;
+}
+
+h2 {
+  font-size: 24px;
+  text-align: center;
+  color: #222;
+  margin-bottom: 1rem;
+}
+
+ion-label {
+  font-size: 14px;
+  color: #666;
+}
+
+ion-page {
+  background-color: #f9f9f9;
+}
+
+/* Estilos para el botón de "Regístrar" */
+.registerButton {
+  --background: #3880ff;
+  --border-radius: 8px;
+  --padding-start: 24px;
+  --padding-end: 24px;
+  --font-size: 16px; /* tamaño de la fuente */
+  color: #fff; /* color del texto */
+  font-weight: bold;
+  text-align: center;
+  text-transform: none; /* quitar uppercase de texto */
+  margin-top: -1rem; /* reducir margen superior NO MODIFICAR */
+}
+
+/* Estilos para el título "¿No tienes cuenta?" */
+.registerPrompt {
+  text-align: center;
+  font-size: 16px;
+  color: #888;
+  margin-top: 1rem;
+}

@@ -1,0 +1,15 @@
+.searchbar-wrapper {
+  position: relative;
+}
+
+.search-suggestions-list {
+  position: absolute;
+  top: 56px; /* debajo del searchbar */
+  width: 100%;
+  background: white;
+  z-index: 10;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.2);
+  border-radius: 6px;
+  max-height: 200px;
+  overflow-y: auto;
+}

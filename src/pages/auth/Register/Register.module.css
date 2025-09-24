@@ -1,0 +1,74 @@
+
+.container {
+  max-width: 500px;
+  margin: 0 auto;
+  padding: 2rem;
+}
+
+.logo {
+  display: block;
+  margin: 0 auto 1rem auto;
+  width: 120px;
+  height: auto;
+}
+
+.title {
+  text-align: center;
+  margin-bottom: 1.5rem;
+  font-weight: 700;
+  color: #000;
+}
+.input-box {
+  background-color: #ffffff;
+  border: 1px solid #ccc;
+  border-radius: 10px;
+  padding: 2px 10px;
+  margin-bottom: 12px;
+  --min-height: 40px;
+  --highlight-color-focused: #000;
+}
+
+
+.input-box ion-input::part(placeholder) {
+  --color: #999;
+  --opacity: 1;
+}
+
+
+.register-button {
+  --background: #000000;
+  --background-hover: #333333;
+  --border-radius: 25px;
+  --padding-top: 14px;
+  --padding-bottom: 14px;
+  font-weight: bold;
+  margin-top: 20px;
+  width: 100%;
+  transition: 0.3s ease;
+}
+
+.register-button:hover {
+  filter: brightness(1.2);
+}
+
+.login-link-container {
+  text-align: center;
+  margin-top: 18px;
+}
+
+.login-text {
+  color: #444;
+  font-size: 0.95rem;
+}
+
+.login-link {
+  color: #000;
+  font-weight: 500;
+  text-decoration: underline;
+  cursor: pointer;
+}
+
+.login-link:hover {
+  text-decoration: underline;
+  color: #333;
+}

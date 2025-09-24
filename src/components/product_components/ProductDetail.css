@@ -1,0 +1,42 @@
+/* Modern Product Detail Styles */
+
+/* Variables de tema */
+:root {
+  --pd-bg-gradient: linear-gradient(135deg, #f5f7fa 0%, #e3e8ef 100%);
+  --pd-card-bg: #fff;
+  --pd-text-primary: #1f2937;
+  --pd-text-secondary: #4b5563;
+  --pd-accent-gradient: linear-gradient(90deg, #3a86ff, #4361ee);
+  --pd-radius: 1.2rem;
+  --pd-shadow: 0 8px 32px rgba(67,97,238,0.10);
+}
+
+/* Fondo de la página */
+.product-detail-bg {
+  background: var(--pd-bg-gradient);
+  min-height: 100vh;
+  padding-top: 56px;
+}
+
+/* Contenedor principal */
+.product-detail-container {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 2.5rem 1.2rem;
+}
+
+/* Grid adaptable */
+.product-detail-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2vw 2vw;
+  align-items: stretch;
+  padding: 2vw 0;
+}
+
+@media (max-width: 900px) {
+  .product-detail-grid {
+    grid-template-columns: 1fr;
+    gap: 6vw;
+  }
+}

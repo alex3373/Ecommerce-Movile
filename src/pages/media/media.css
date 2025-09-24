@@ -1,0 +1,48 @@
+.mediaContainer {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  padding: 16px;
+  padding-bottom: 60px;
+}
+
+.mediaCard {
+  border-radius: 16px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  padding: 16px;
+}
+
+.mediaTitle {
+  text-align: center;
+  font-size: 1.3rem;
+  font-weight: bold;
+  color: var(--ion-color-primary);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 8px;
+}
+
+.mediaIcon {
+  font-size: 1.2rem;
+}
+
+.mediaCenter {
+  display: flex;
+  justify-content: center;
+  margin-top: 16px;
+}
+
+.mediaPreview {
+  display: flex;
+  justify-content: center;
+  margin-top: 10px;
+}
+
+.previewImage {
+  max-width: 100%;
+  max-height: 200px;
+  border-radius: 12px;
+  object-fit: cover;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.15);
+}
