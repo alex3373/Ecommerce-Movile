@@ -1,4 +1,4 @@
-const API_BASE = 'https://cfbackend-r4jl.onrender.com/api';
+const API_BASE = 'https://backendecom-gxrc.onrender.com/api';
 
 export interface WooProduct {
   id: number;
@@ -98,7 +98,7 @@ export const fetchWooProductById = async (id: number): Promise<WooProduct> => {
 ////////////////////////////////////////////////////
 
 // === API WooCommerce dinámica ===
-const ALT_API_BASE = 'https://cfbackend-r4jl.onrender.com/api/alt';
+const ALT_API_BASE = 'https://backendecom-gxrc.onrender.com/api/alt';
 
 export interface WooCredentials {
   store_url: string;

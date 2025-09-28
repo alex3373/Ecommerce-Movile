@@ -10,7 +10,7 @@ import {
 import { cartOutline, heartOutline, heart, star } from "ionicons/icons";
 import React from "react";
 import "./ProductInfo.css";
-import { WooProduct } from "../../services/apiOfertasimperdibles";
+import { WooProduct } from "../../services/apiEcommerce";
 
 interface Props {
   product: WooProduct;

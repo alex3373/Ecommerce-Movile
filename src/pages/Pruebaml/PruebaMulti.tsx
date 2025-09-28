@@ -3,7 +3,7 @@ import {
   altFetchWooProducts,
   WooProduct,
   WooCredentials
-} from '../../services/apiOfertasimperdibles';
+} from '../../services/apiEcommerce';
 
 const PruebaMulti: React.FC = () => {
   const [credentials, setCredentials] = useState<WooCredentials>({

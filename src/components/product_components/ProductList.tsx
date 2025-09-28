@@ -16,7 +16,7 @@ import {
   fetchWooProductsBySearch,
   WooCategory,
   WooProduct,
-} from '../../services/apiOfertasimperdibles';
+} from '../../services/apiEcommerce';
 import ProductCard from './ProductCard';
 import Searchbar from '../../components/searchbarcomponents/Searchbar';
 import Header from '../Header';

@@ -14,7 +14,7 @@ import {
   IonButton,
 } from '@ionic/react';
 import { useParams, useHistory } from 'react-router-dom';
-import { fetchWooProductById } from '../../services/apiOfertasimperdibles';
+import { fetchWooProductById } from '../../services/apiEcommerce';
 
 // Función para descargar imagen
 const descargarImagen = (url: string, nombre: string) => {

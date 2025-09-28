@@ -5,7 +5,7 @@ import ProductDetailHeader from "./ProductDetailHeader";
 import ProductImage from "./ProductImage";
 import ProductInfo from "./ProductInfo";
 import "./ProductDetail.css";
-import { fetchWooProductById, WooProduct } from "../../services/apiOfertasimperdibles"; 
+import { fetchWooProductById, WooProduct } from "../../services/apiEcommerce"; 
 
 const ProductDetail: React.FC = () => {
   const { id } = useParams<{ id: string }>();

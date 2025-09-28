@@ -15,7 +15,7 @@ import {
   fetchWooCategories,
   fetchWooProductsByCategory,
   WooCategory,
-} from '../../../services/apiOfertasimperdibles';
+} from '../../../services/apiEcommerce';
 
 const CategoryList: React.FC = () => {
   const [categories, setCategories] = useState<WooCategory[]>([]);

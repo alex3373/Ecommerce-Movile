@@ -20,7 +20,7 @@ import {
   fetchWooProductsBySearch,
   WooCategory,
   WooProduct,
-} from '../../services/apiOfertasimperdibles';
+} from '../../services/apiEcommerce';
 import Searchbar from '../../components/searchbarcomponents/Searchbar';
 
 const Productos: React.FC = () => {

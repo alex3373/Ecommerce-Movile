@@ -1,6 +1,6 @@
 import { IonSearchbar, IonList, IonItem, IonLabel } from '@ionic/react';
 import { useState, useEffect } from 'react';
-import { fetchWooProductsBySearch } from '../../services/apiOfertasimperdibles';
+import { fetchWooProductsBySearch } from '../../services/apiEcommerce';
 import './Searchbar.css';
 
 interface SearchbarProps {

@@ -14,7 +14,7 @@ import { optionsOutline } from 'ionicons/icons';
 import Header from '../../components/Header';
 import Footer from '../../components/Footer';
 import ProductCard from '../../components/product_components/ProductCard';
-import { fetchWooProducts } from '../../services/apiOfertasimperdibles';
+import { fetchWooProducts } from '../../services/apiEcommerce';
 import './ProductList.css';
 
 const ProductList: React.FC = () => {

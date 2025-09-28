@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { IonText, IonButton, IonCard, IonCardContent, IonImg, IonSpinner } from '@ionic/react';
 import { useHistory } from 'react-router-dom';
-import { WooProduct, fetchWooProductsBySearch } from '../../../services/apiOfertasimperdibles';
+import { WooProduct, fetchWooProductsBySearch } from '../../../services/apiEcommerce';
 
 const ProductList: React.FC = () => {
   const [products, setProducts] = useState<WooProduct[]>([]);
