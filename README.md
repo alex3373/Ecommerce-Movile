@@ -1,4 +1,4 @@
-# 📦 Dropshipping App (Frontend)
+# 📦 Ecommerce App (Frontend)
 
 Aplicación móvil desarrollada con **Ionic + React + TypeScript**, enfocada en facilitar la compra y personalización de productos mediante integración con WooCommerc. Los usuarios pueden explorar productos, realizar pedidos, comunicarse con el vendedor y gestionar su cuenta de forma segura.
 
@@ -17,7 +17,7 @@ Aplicación móvil desarrollada con **Ionic + React + TypeScript**, enfocada en 
 ## 📁 Estructura del proyecto (frontend)
 
 ```bash
-dropshipping/
+Ecommerce/
 └── 📁public
 └── 📁src
     └── 📁components
@@ -64,12 +64,7 @@ dropshipping/
 
 ## 🧩 Instalación y ejecución
 
-1. Clona este repositorio:
-
-```bash
-git clone https://github.com/Yampi0/dropshipping.git
-cd dropshipping
-```
+1. Clona este repositorio
 
 2. Instala las dependencias:
 

@@ -22,7 +22,7 @@
 
 .view-all-button {
   width: 100%;
-  background-color: #3880ff;
+  background-color: #0A9396;
   color: white;
   border: none;
   padding: 8px;
@@ -32,7 +32,7 @@
 }
 
 .view-all-button:hover {
-  background-color: #3171e0;
+  background-color: #0A9396;
 }
 
 .notification-item {

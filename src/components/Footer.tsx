@@ -7,7 +7,7 @@ const Footer: React.FC = () => {
      <IonFooter className="fixed-footer">
       <IonToolbar>
          <div className="footer-container">
-      <p className="footer-title">© Dropshipping 2025.</p>
+      <p className="footer-title">© Ecommerce 2025.</p>
 
       <div className="footer-row">
         <p className="class-text">¿Eres usuario? <a href="/login" className="footer-link">Inicia sesión</a></p>

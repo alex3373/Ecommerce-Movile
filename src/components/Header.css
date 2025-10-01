@@ -1,6 +1,6 @@
 /* Header completo */
 ion-header {
-    --background: #3880ff; /* color azul Ionic */
+    --background: #005F73; /* color azul Ionic */
     --color: #fff; /* color de texto */
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2); /* pequeña sombra elegante */
 }
@@ -85,7 +85,7 @@ ion-item:hover {
 }
 
 .custom-header {
-    --background: #0057d9; /* Azul intenso como el del menú */
+    --background: #005F73; /* Azul intenso como el del menú */
     --color: #ffffff; /* Texto blanco */
 }
 

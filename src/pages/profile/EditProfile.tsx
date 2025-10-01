@@ -19,13 +19,14 @@ import {
   calendarOutline,
   locationOutline,
 } from "ionicons/icons";
-import "./EditProfile.css";
 import Header from "../../components/Header";
 import { useEffect, useState } from "react";
 import { auth, db } from "../../services/firebase";
 import { doc, getDoc, updateDoc } from "firebase/firestore";
 import { getStorage, ref, uploadBytes, getDownloadURL } from "firebase/storage";
 import imageCompression from "browser-image-compression";
+import './EditProfile.css';
+
 
 const EditProfile = () => {
   const history = useHistory();

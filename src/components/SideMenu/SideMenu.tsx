@@ -30,6 +30,9 @@ import { getCurrentUser } from '../../utils/auth';
 import { useLocation } from 'react-router-dom';
 import LogoutButton from '../Logout';
 
+/* Importar el CSS que te pasé */
+import './SideMenu.css';
+
 const closeMenu = async () => {
   const menu = document.querySelector("ion-menu") as HTMLIonMenuElement | null;
   if (menu) {
@@ -96,7 +99,7 @@ const SideMenu: React.FC = () => {
                 <IonIcon slot="start" icon={serverOutline} />
                 Servidor
               </IonItem>
-              <IonItem routerLink="/" routerDirection="none" onClick={closeMenu}>
+              <IonItem routerLink="/" routerDirection="none" onClick={closeMenu} className="logout-item">
                 <LogoutButton />
               </IonItem>
             </>
@@ -135,7 +138,7 @@ const SideMenu: React.FC = () => {
                 <IonIcon slot="start" icon={informationCircleOutline} />
                 About Us
               </IonItem>
-              <IonItem routerLink="/" routerDirection="none" onClick={closeMenu}>
+              <IonItem routerLink="/" routerDirection="none" onClick={closeMenu} className="logout-item">
                 <LogoutButton />
               </IonItem>
             </>

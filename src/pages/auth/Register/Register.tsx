@@ -102,8 +102,8 @@ const Register = () => {
         <IonContent className="ion-padding">
           <div className={styles.container}>
             <img
-              src="./assets/logo_crazy_family_v2.png"
-              alt="Logo Crazy Family"
+              src="./assets/logo_ecommerce.png"
+              alt="Logo"
               className={styles.logo}
             />
             <h2 className={styles.title}>Crear una cuenta</h2>

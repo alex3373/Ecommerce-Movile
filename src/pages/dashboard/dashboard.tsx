@@ -5,7 +5,6 @@ import Footer from '../../components/Footer';
 import UserTable from '../../components/dashboardcomponents/UserTable/UserTable';
 import Pagination from '../../components/dashboardcomponents/Pagination/Pagination';
 import InfoCards from '../../components/dashboardcomponents/InfoCards/InfoCards';
-import MapaLocales from '../../components/dashboardcomponents/Mapa/mapa';
 import { useEffect, useState } from 'react';
 import { getCurrentUser } from '../../utils/auth';
 
@@ -35,18 +34,6 @@ const Dashboard: React.FC = () => {
           <UserTable />
         </div>
 
-        {/* Mapa de Locales */}
-      <div style={{marginBottom: '30px'}}>
-        <IonCard>
-          <div style={{ padding: '16px', textAlign: 'center' }}>
-            <h2 style={{ marginBottom: '8px' }}>🗺️ Mapa de Locales Físicos</h2>
-            <p style={{ fontSize: '14px', color: '#666' }}>
-              Visualiza las ubicaciones actuales de tus tiendas físicas.
-            </p>
-          </div>
-          <MapaLocales />
-          </IonCard>
-      </div>
 
         {/* Paginación */}
         <Pagination />

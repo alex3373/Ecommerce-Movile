@@ -13,14 +13,14 @@ const HowItWorks: React.FC = () => {
       color: '#034078',
       boxShadow: '0 2px 10px rgba(3,64,120,0.1)',
     }}>
-      <h2>💼 ¿Cómo funciona Crazy Family?</h2>
+      <h2>💼 ¿Cómo funciona nuestro Ecommerce?</h2>
       <p style={{ fontSize: '16px' }}>
-        Facilitamos la conexión entre productos y personas. Conoce nuestro flujo de funcionamiento:
+        Te ofrecemos una experiencia de compra rápida, segura y confiable. Así funciona nuestro ecommerce:
       </p>
       <ul style={{ listStyleType: 'none', padding: 0, fontWeight: '600' }}>
-        <li>🔍 Explora nuestro catálogo y selecciona los productos que necesites</li>
-        <li>🛒 Realiza tu pedido de forma simple y segura</li>
-        <li>🚚 Nosotros nos encargamos de la entrega directa al destino</li>
+        <li>🔍 Explora nuestro catálogo y encuentra lo que necesitas</li>
+        <li>🛒 Agrega productos al carrito y finaliza tu compra fácilmente</li>
+        <li>🚚 Recibe tu pedido directamente en tu domicilio</li>
       </ul>
       <p style={{ marginTop: '15px', fontWeight: '600', color: '#007bff', cursor: 'pointer' }}
          onClick={() => window.open('https://wa.me/+56926237923', '_blank')}>
@@ -31,4 +31,3 @@ const HowItWorks: React.FC = () => {
 };
 
 export default HowItWorks;
-

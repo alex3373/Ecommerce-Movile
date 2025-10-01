@@ -48,7 +48,7 @@ const ForgotPassword = () => {
       <IonContent className="ion-padding">
         <div className={styles.logoContainer}>
           <img
-            src="./assets/logo_crazy_family_v2.png"
+            src="./assets/logo_ecommerce.png"
             alt="Logo Empresa"
             className={styles.logo}
           />

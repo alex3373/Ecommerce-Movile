@@ -78,7 +78,7 @@ useEffect(() => {
 
                 <IonButton
                   size="small"
-                  color="primary"
+                  color="danger"
                   fill="solid"
                   expand="block"
                   style={{ marginTop: 8 }}

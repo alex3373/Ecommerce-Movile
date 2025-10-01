@@ -40,9 +40,9 @@ const Header: React.FC<HeaderProps> = ({ title }) => {
                 <div className="title-with-logo">
                     <IonTitle>{title}</IonTitle>
                     <IonImg 
-                        src="./assets/logo_crazy_family_v2.png" 
+                        src="./assets/logo_ecommerce.png" 
                         className="header-logo"
-                        alt="Crazy Family Logo"
+                        alt="Logo"
                     />
                 </div>
                 

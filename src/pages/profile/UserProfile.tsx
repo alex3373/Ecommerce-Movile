@@ -25,7 +25,7 @@ import { useHistory } from "react-router-dom";
 import { auth, db } from "../../services/firebase";
 import { doc, getDoc } from "firebase/firestore";
 import Header from "../../components/Header";
-import "./UserProfile.css";
+import './UserProfile.css';
 
 const UserProfile: React.FC = () => {
   const history = useHistory();
@@ -79,6 +79,7 @@ const UserProfile: React.FC = () => {
                   className="edit-profile-button"
                   expand="block"
                   fill="outline"
+                  color="danger"
                   onClick={handleEditProfile}
                   style={{ marginTop: 12 }}
                 >
@@ -96,7 +97,7 @@ const UserProfile: React.FC = () => {
                 <IonRow>
                   <IonCol size="12" size-md="6">
                     <IonItem lines="none" className="profile-field">
-                      <IonIcon icon={callOutline} slot="start" color="primary" />
+                      <IonIcon icon={callOutline} slot="start" color="danger" />
                       <div className="profile-field-row">
                         <span className="profile-field-key">Teléfono:</span>
                         <span className="profile-field-value">
@@ -107,7 +108,7 @@ const UserProfile: React.FC = () => {
                   </IonCol>
                   <IonCol size="12" size-md="6">
                     <IonItem lines="none" className="profile-field">
-                      <IonIcon icon={locationOutline} slot="start" color="primary" />
+                      <IonIcon icon={locationOutline} slot="start" color="danger" />
                       <div className="profile-field-row">
                         <span className="profile-field-key">Dirección:</span>
                         <span className="profile-field-value">
@@ -120,7 +121,7 @@ const UserProfile: React.FC = () => {
                 <IonRow>
                   <IonCol size="12" size-md="6">
                     <IonItem lines="none" className="profile-field">
-                      <IonIcon icon={calendarOutline} slot="start" color="primary" />
+                      <IonIcon icon={calendarOutline} slot="start" color="danger" />
                       <div className="profile-field-row">
                         <span className="profile-field-key">Fecha de nacimiento:</span>
                         <span className="profile-field-value">

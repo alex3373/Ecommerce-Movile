@@ -17,18 +17,19 @@ const UserAvatar: React.FC<Props> = ({ foto, nombre, email, onEdit }) => (
     <IonText>
       <h1 className="user-name">{nombre}</h1>
     </IonText>
-    <IonText color="medium">
+    <IonText color="danger">
       <p className="user-email">{email}</p>
     </IonText>
     <IonButton
-      className="edit-profile-button"
-      onClick={onEdit}
-      fill="outline"
-      shape="round"
-    >
-      <IonIcon slot="start" icon={createOutline} />
-      Editar Perfil
-    </IonButton>
+  className="edit-profile-button"
+  onClick={onEdit}
+  fill="outline"
+  shape="round"
+  color="danger"
+>
+  <IonIcon slot="start" icon={createOutline} />
+  Editar Perfil
+</IonButton>
   </div>
 );
 

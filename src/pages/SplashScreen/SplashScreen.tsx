@@ -33,8 +33,8 @@ const SplashScreen: React.FC = () => {
     <IonPage>
       <IonContent fullscreen className="ion-text-center ion-padding">
         <div className="splash-container">
-          <img src="/assets/logo_crazy_family_v2.png" alt="Logo" />
-          <h1>Dropshipping 2025</h1>
+          <img src="/assets/logo_ecommerce.png" alt="Logo" />
+          <h1>Ecommerce 2025</h1>
           <p>Preparando tu experiencia...</p>
         </div>
       </IonContent>

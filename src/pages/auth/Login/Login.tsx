@@ -64,7 +64,7 @@ const Login = () => {
       </IonHeader>
       <IonContent className="ion-padding">
         <div className={styles.logoContainer}>
-          <img src="./assets/logo_crazy_family_v2.png" alt="Logo Empresa" className={styles.logo} />
+          <img src="./assets/logo_ecommerce.png" alt="Logo Empresa" className={styles.logo} />
         </div>
 
         <form onSubmit={handleLogin} className={styles.form}>

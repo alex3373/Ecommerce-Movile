@@ -21,8 +21,13 @@ body::-webkit-scrollbar {
 
 :root {
 
-  --ion-background-color: #e8f0f1;
-
+  --ion-background-color: #ffffff;
+  --ion-color-danger: #0A9396;
+  --ion-color-danger-rgb: 10, 147, 150;
+  --ion-color-danger-contrast: #ffffff;
+  --ion-color-danger-contrast-rgb: 255, 255, 255;
+  --ion-color-danger-shade: #0a8284;
+  --ion-color-danger-tint: #13a9ab;
 }
 
 
@@ -31,7 +36,8 @@ ion-menu ion-item ion-icon[slot="start"] {
 }
 
 .custom-searchbar {
-  --background: #fff;
+  --background: #d3a5a5;
   --box-shadow: 0 0 0 1px #ccc;
   border-radius: 8px;
 }
+

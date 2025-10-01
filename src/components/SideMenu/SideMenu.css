@@ -1,0 +1,55 @@
+/* ===== Menú lateral ===== */
+.custom-menu {
+  --background: #ffffff; /* Fondo blanco limpio */
+  border-right: 4px solid #005F73; /* Línea vertical azul petróleo */
+}
+
+/* ===== Items del menú ===== */
+ion-item {
+  --background: transparent;
+  --color: #333; /* Texto oscuro legible */
+  --border-color: transparent;
+  font-size: 15px;
+  font-weight: 500;
+  transition: all 0.2s ease-in-out;
+}
+
+/* Hover y selección */
+ion-item:hover {
+  --background: #E0F7F7; /* Fondo turquesa muy claro */
+  --color: #0A9396; /* Texto turquesa brillante */
+  transform: translateX(4px); /* pequeño movimiento al pasar */
+}
+
+/* ===== Iconos ===== */
+ion-icon {
+  color: #005F73; /* Azul petróleo */
+  font-size: 20px;
+  margin-right: 8px;
+  transition: color 0.2s ease-in-out;
+}
+
+ion-item:hover ion-icon {
+  color: #0A9396; /* Cambia a turquesa en hover */
+}
+
+/* ===== Botón de cerrar sesión ===== */
+ion-item.logout-item {
+  margin-top: 10px;
+}
+
+ion-item.logout-item button {
+  background-color: #EE6C4D; /* Coral suave */
+  color: #fff;
+  border-radius: 8px;
+  padding: 10px 14px;
+  font-weight: 600;
+  text-transform: uppercase;
+  font-size: 14px;
+  width: 100%;
+  transition: background 0.2s ease-in-out;
+}
+
+ion-item.logout-item button:hover {
+  background-color: #d95a3b; /* Coral más oscuro al pasar */
+}
