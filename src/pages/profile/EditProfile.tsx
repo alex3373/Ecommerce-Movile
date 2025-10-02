@@ -11,7 +11,6 @@ import {
 } from "@ionic/react";
 import { useHistory } from "react-router-dom";
 import {
-  camera,
   personOutline,
   mailOutline,
   callOutline,
@@ -19,14 +18,11 @@ import {
   calendarOutline,
   locationOutline,
 } from "ionicons/icons";
-import Header from "../../components/Header";
+import Header from "../../components/Header/Header";
 import { useEffect, useState } from "react";
 import { auth, db } from "../../services/firebase";
 import { doc, getDoc, updateDoc } from "firebase/firestore";
-import { getStorage, ref, uploadBytes, getDownloadURL } from "firebase/storage";
-import imageCompression from "browser-image-compression";
-import './EditProfile.css';
-
+import "./EditProfile.css";
 
 const EditProfile = () => {
   const history = useHistory();
@@ -38,7 +34,6 @@ const EditProfile = () => {
   const [bio, setBio] = useState("");
   const [email, setEmail] = useState("");
   const [foto, setFoto] = useState("");
-  const [profileImage, setProfileImage] = useState<File | null>(null);
 
   useEffect(() => {
     const fetchUser = async () => {
@@ -63,15 +58,6 @@ const EditProfile = () => {
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    let newPhotoURL = foto;
-    if (profileImage) {
-      const options = { maxSizeMB: 0.1, maxWidthOrHeight: 256, useWebWorker: true };
-      const compressedFile = await imageCompression(profileImage, options);
-      const storage = getStorage();
-      const storageRef = ref(storage, `profile_photos/${auth.currentUser?.uid}_${Date.now()}.jpg`);
-      await uploadBytes(storageRef, compressedFile);
-      newPhotoURL = await getDownloadURL(storageRef);
-    }
     await updateDoc(doc(db, "users", auth.currentUser!.uid), {
       name: nombre,
       lastName: apellido,
@@ -79,7 +65,7 @@ const EditProfile = () => {
       address: direccion,
       birthDate: fechaNacimiento,
       bio: bio,
-      photoURL: newPhotoURL,
+      photoURL: foto,
     });
     history.push("/profile");
   };
@@ -89,26 +75,8 @@ const EditProfile = () => {
       <Header title="Editar Perfil" />
       <IonContent fullscreen className="edit-profile-content">
         <form onSubmit={handleSubmit}>
-          {/* --- Sección del Avatar --- */}
-          <div className="avatar-section ion-text-center">
-            <IonAvatar className="profile-avatar-edit">
-              <img src={profileImage ? URL.createObjectURL(profileImage) : foto || "/assets/avatar-default.png"} alt="Avatar" />
-            </IonAvatar>
-            <IonButton fill="clear" className="change-photo-btn">
-              <IonIcon slot="start" icon={camera} />
-              <input
-                type="file"
-                accept="image/*"
-                style={{ display: "none" }}
-                onChange={e => {
-                  if (e.target.files && e.target.files[0]) {
-                    setProfileImage(e.target.files[0]);
-                  }
-                }}
-              />
-              Cambiar foto
-            </IonButton>
-          </div>
+          
+     
 
           {/* --- Formulario de Edición --- */}
           <div className="form-fields">
@@ -118,7 +86,7 @@ const EditProfile = () => {
               <IonInput
                 type="text"
                 value={nombre}
-                onIonChange={e => setNombre(e.detail.value!)}
+                onIonChange={(e) => setNombre(e.detail.value!)}
                 required
               />
             </IonItem>
@@ -128,7 +96,7 @@ const EditProfile = () => {
               <IonInput
                 type="text"
                 value={apellido}
-                onIonChange={e => setApellido(e.detail.value!)}
+                onIonChange={(e) => setApellido(e.detail.value!)}
                 required
               />
             </IonItem>
@@ -136,12 +104,7 @@ const EditProfile = () => {
             <IonItem lines="none" className="form-input-item">
               <IonIcon icon={mailOutline} slot="start" color="medium" />
               <IonLabel position="stacked">Email</IonLabel>
-              <IonInput
-                type="email"
-                value={email}
-                readonly
-                disabled
-              />
+              <IonInput type="email" value={email} readonly disabled />
             </IonItem>
 
             <IonItem lines="none" className="form-input-item">
@@ -150,7 +113,7 @@ const EditProfile = () => {
               <IonInput
                 type="tel"
                 value={celular}
-                onIonChange={e => setCelular(e.detail.value!)}
+                onIonChange={(e) => setCelular(e.detail.value!)}
                 required
               />
             </IonItem>
@@ -161,7 +124,7 @@ const EditProfile = () => {
               <IonInput
                 type="text"
                 value={direccion}
-                onIonChange={e => setDireccion(e.detail.value!)}
+                onIonChange={(e) => setDireccion(e.detail.value!)}
                 required
               />
             </IonItem>
@@ -172,15 +135,24 @@ const EditProfile = () => {
               <IonInput
                 type="date"
                 value={fechaNacimiento}
-                onIonChange={e => setFechaNacimiento(e.detail.value!)}
+                onIonChange={(e) => setFechaNacimiento(e.detail.value!)}
                 required
               />
             </IonItem>
 
             <IonItem lines="none" className="form-input-item">
-              <IonIcon icon={informationCircleOutline} slot="start" color="medium" />
-              <IonLabel position="stacked">Biografía</IonLabel>
-              <IonTextarea rows={3} name="bio" value={bio} onIonChange={e => setBio(e.detail.value!)} />
+              <IonIcon
+                icon={informationCircleOutline}
+                slot="start"
+                color="medium"
+              />
+              <IonLabel position="stacked">Mis Preferencias</IonLabel>
+              <IonTextarea
+                rows={3}
+                name="bio"
+                value={bio}
+                onIonChange={(e) => setBio(e.detail.value!)}
+              />
             </IonItem>
           </div>
 

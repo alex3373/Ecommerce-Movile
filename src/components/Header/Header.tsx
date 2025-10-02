@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import {
     IonHeader,
     IonToolbar,
@@ -6,21 +6,32 @@ import {
     IonButtons,
     IonMenuButton,
     IonButton,
-    IonPopover,
-    IonList,
-    IonItem,
-    IonImg
+    IonImg,
+    IonIcon
 } from '@ionic/react';
+import { cartOutline } from 'ionicons/icons';
+import { useHistory } from 'react-router-dom';
 import './Header.css';
-import NotificationButton from './common/NotificationButton';
+import NotificationButton from '../common/NotificationButton';
+import { auth } from '../../services/firebase';
+import { onAuthStateChanged, User } from 'firebase/auth';
 
 interface HeaderProps {
     title: string;
 }
 
 const Header: React.FC<HeaderProps> = ({ title }) => {
+    const [user, setUser] = useState<User | null>(null);
     const [showPopover, setShowPopover] = useState(false);
     const [event, setEvent] = useState<MouseEvent | undefined>(undefined);
+    const history = useHistory();
+
+    useEffect(() => {
+        const unsubscribe = onAuthStateChanged(auth, (firebaseUser) => {
+            setUser(firebaseUser);
+        });
+        return () => unsubscribe();
+    }, []);
 
     const openPopover = (e: React.MouseEvent<HTMLIonButtonElement, MouseEvent>) => {
         e.persist();
@@ -48,8 +59,14 @@ const Header: React.FC<HeaderProps> = ({ title }) => {
                 
                 <IonButtons slot="end">
                     <NotificationButton />
-                </IonButtons>
 
+                    {/* Botón de carrito solo si hay usuario logueado */}
+                    {user && (
+                        <IonButton onClick={() => history.push("/cart")}>
+                            <IonIcon icon={cartOutline} />
+                        </IonButton>
+                    )}
+                </IonButtons>
             </IonToolbar>
         </IonHeader>
     );

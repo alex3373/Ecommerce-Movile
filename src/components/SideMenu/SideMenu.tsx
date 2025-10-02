@@ -28,7 +28,7 @@ import {
 
 import { getCurrentUser } from '../../utils/auth';
 import { useLocation } from 'react-router-dom';
-import LogoutButton from '../Logout';
+import LogoutButton from '../Logout/Logout';
 
 /* Importar el CSS que te pasé */
 import './SideMenu.css';
@@ -129,10 +129,6 @@ const SideMenu: React.FC = () => {
               <IonItem routerLink="/soporte" routerDirection="none" onClick={closeMenu}>
                 <IonIcon slot="start" icon={helpCircleOutline} />
                 Soporte
-              </IonItem>
-              <IonItem routerLink="/chat" routerDirection="none" onClick={closeMenu}>
-                <IonIcon slot="start" icon={chatboxOutline} />
-                Chat
               </IonItem>
               <IonItem routerLink="/home" routerDirection="none" onClick={closeMenu}>
                 <IonIcon slot="start" icon={informationCircleOutline} />

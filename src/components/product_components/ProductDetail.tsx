@@ -1,10 +1,18 @@
 import React, { useState, useEffect } from "react";
 import { useParams, useHistory } from "react-router-dom";
-import { IonPage, IonContent, IonGrid, IonRow, IonCol, IonText, IonButton, IonSpinner } from "@ionic/react";
+import { 
+  IonPage, 
+  IonContent, 
+  IonGrid, 
+  IonRow, 
+  IonCol, 
+  IonText, 
+  IonButton, 
+  IonSpinner 
+} from "@ionic/react";
 import ProductDetailHeader from "./ProductDetailHeader";
 import ProductImage from "./ProductImage";
 import ProductInfo from "./ProductInfo";
-import "./ProductDetail.css";
 import { fetchWooProductById, WooProduct } from "../../services/apiEcommerce"; 
 
 const ProductDetail: React.FC = () => {
@@ -13,7 +21,6 @@ const ProductDetail: React.FC = () => {
   const [product, setProduct] = useState<WooProduct | null>(null);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(false);
-  const [isFav, setIsFav] = useState(false);
 
   useEffect(() => {
     const loadProduct = async () => {
@@ -47,7 +54,7 @@ const ProductDetail: React.FC = () => {
       <IonPage>
         <ProductDetailHeader title="Producto no encontrado" onBack={history.goBack} />
         <IonContent className="ion-padding">
-          <IonText color="danger"><h2>No encontrado</h2></IonText>
+          <IonText color="primary"><h2>No encontrado</h2></IonText>
         </IonContent>
       </IonPage>
     );
@@ -64,18 +71,9 @@ const ProductDetail: React.FC = () => {
                 <ProductImage src={product.images?.[0]?.src} alt={product.name} />
               </IonCol>
               <IonCol size="12" sizeMd="6">
-                <ProductInfo
-                  product={product}
-                  isFav={isFav}
-                  onToggleFav={() => setIsFav((prev) => !prev)}
-                />
-                <IonButton
-                  expand="block"
-                  color="secondary"
-                  onClick={() => history.push(`/contact-seller/${product.id}`)}
-                >
-                  Contactar al vendedor
-                </IonButton>
+                <ProductInfo product={product} />
+
+                
               </IonCol>
             </IonRow>
           </IonGrid>

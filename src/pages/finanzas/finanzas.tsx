@@ -1,7 +1,7 @@
 import React from 'react';
 import { IonPage, IonHeader, IonToolbar, IonTitle, IonContent } from '@ionic/react';
 import Finanzas from '../../components/dashboardcomponents/Finazas/Finanzas';
-import Header from '../../components/Header';
+import Header from '../../components/Header/Header';
 
 const PaginaFinanzas: React.FC = () => {
     return (

@@ -19,7 +19,7 @@ import {
 } from '../../services/apiEcommerce';
 import ProductCard from './ProductCard';
 import Searchbar from '../../components/searchbarcomponents/Searchbar';
-import Header from '../Header';
+import Header from '../Header/Header';
 import './ProductList.css';
 
 const productsPerPage = 30;
@@ -144,25 +144,34 @@ const ProductList: React.FC = () => {
         <h2 className="text-lg font-bold mb-4">Categorías</h2>
         <div style={{ display: 'flex', flexWrap: 'wrap', gap: '10px', marginBottom: '10px' }}>
           {currentCategories.map((cat) => (
-            <IonButton
-              key={cat.id}
-              onClick={() => handleCategoryClick(cat.id)}
-              color={categoriaId === String(cat.id) ? 'tertiary' : 'medium'}
-            >
-              {cat.name} ({cat.count})
-            </IonButton>
+           <IonButton
+            key={cat.id}
+            onClick={() => handleCategoryClick(cat.id)}
+            color={categoriaId === String(cat.id) ? 'tertiary' : 'primary'}
+          >
+            {cat.name} ({cat.count})
+          </IonButton>
           ))}
         </div>
 
         {/* 🔄 Paginación de categorías */}
         <div style={{ display: 'flex', justifyContent: 'center', gap: '10px', marginBottom: '20px' }}>
-          <IonButton disabled={currentCategoryPage === 1} onClick={() => setCurrentCategoryPage(p => p - 1)}>
+          <IonButton
+            color="primary"
+            disabled={currentCategoryPage === 1}
+            onClick={() => setCurrentCategoryPage(p => p - 1)}
+          >
             Anterior
           </IonButton>
-          <IonButton disabled={currentCategoryPage === totalCategoryPages} onClick={() => setCurrentCategoryPage(p => p + 1)}>
+          <IonButton
+            color="primary"
+            disabled={currentCategoryPage === totalCategoryPages}
+            onClick={() => setCurrentCategoryPage(p => p + 1)}
+          >
             Siguiente
           </IonButton>
         </div>
+
 
         {/* 🛒 Productos */}
         <h2 className="text-lg font-bold mb-4">

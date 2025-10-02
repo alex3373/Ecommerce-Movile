@@ -17,8 +17,8 @@ import { useState } from "react";
 import styles from "./Login.module.css";
 import { useHistory } from "react-router-dom";
 import { loginUser } from "../../../services/auth.service";
-import moment from "moment"; // para fecha y hora
 import { registrarEventoAuditoria } from "../../../utils/auditoria";
+import Header from '../../../components/Header/Header';
 
 const Login = () => {
   const [email, setEmail] = useState("");
@@ -57,11 +57,8 @@ const Login = () => {
 
   return (
     <IonPage>
-      <IonHeader>
-        <IonToolbar color="primary">
-          <IonTitle className="ion-text-center" color="light">Inicio de sesión</IonTitle>
-        </IonToolbar>
-      </IonHeader>
+      <Header title="Iniciar Sesión" />
+      
       <IonContent className="ion-padding">
         <div className={styles.logoContainer}>
           <img src="./assets/logo_ecommerce.png" alt="Logo Empresa" className={styles.logo} />
@@ -88,10 +85,12 @@ const Login = () => {
             expand="block"
             type="submit"
             disabled={!email || password.length < 6 || loading}
+            color="primary" // <-- usa tu color definido en :root
             className={(!email || password.length < 6 || loading) ? styles.disabledButton : ""}
           >
             {loading ? <IonSpinner name="dots" /> : "Iniciar sesión"}
           </IonButton>
+
 
           <IonText className={styles.registerPrompt}>
             <p>¿No tienes cuenta? Únete a nuestra familia aquí</p>

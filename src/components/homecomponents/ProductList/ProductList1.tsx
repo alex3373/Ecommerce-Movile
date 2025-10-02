@@ -26,8 +26,8 @@ useEffect(() => {
     <section style={{ padding: 16, backgroundColor: 'transparent' }}>
       <IonText color="primary">
         <h2
-          className="ion-padding-start ion-padding-bottom ion-text-uppercase"
-          style={{ fontWeight: 700, fontSize: '1.4rem' }}
+          className="ion-padding-bottom ion-text-center"
+          style={{ fontWeight: 700, fontSize: "1.4rem" }}
         >
           Productos Destacados
         </h2>

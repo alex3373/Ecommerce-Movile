@@ -1,5 +1,5 @@
 import React from "react";
-import { registrarEventoAuditoria } from "../utils/auditoria";
+import { registrarEventoAuditoria } from "../../utils/auditoria";
 
 const LogoutButton: React.FC = () => {
     const handleLogout = async () => {

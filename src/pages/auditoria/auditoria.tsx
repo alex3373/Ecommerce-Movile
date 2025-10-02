@@ -1,7 +1,7 @@
 // src/pages/AuditoriaPage.tsx
 import { IonPage, IonContent } from "@ionic/react";
 import Auditoria from "../../components/dashboardcomponents/Auditoria/Auditoria";
-import Header from "../../components/Header";
+import Header from "../../components/Header/Header";
 
 const AuditoriaPage = () => {
     return (

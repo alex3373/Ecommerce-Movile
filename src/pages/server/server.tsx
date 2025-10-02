@@ -10,8 +10,7 @@ import {
 } from '@ionic/react';
 import { cloudDone, cloudOffline, warning } from 'ionicons/icons';
 import { useState, useEffect } from 'react';
-import Header from '../../components/Header';
-import Footer from '../../components/Footer';
+import Header from '../../components/Header/Header';
 
 import { getDocs, collection } from 'firebase/firestore';
 import { db } from '../../services/firebase'; 

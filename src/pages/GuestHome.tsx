@@ -4,7 +4,7 @@ import {
     IonText,
 } from '@ionic/react';
 import { useHistory } from 'react-router-dom';
-import Footer from '../components/Footer';
+import Footer from '../components/Footer/Footer';
 import DailyOffers from '../components/homecomponents/DailyOffers/DailyOffers';
 import HowItWorks from '../components/homecomponents/HowItWorks/HowItWorks';
 

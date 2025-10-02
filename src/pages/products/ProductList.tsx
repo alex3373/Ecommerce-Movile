@@ -11,8 +11,7 @@ import {
   IonText,
 } from '@ionic/react';
 import { optionsOutline } from 'ionicons/icons';
-import Header from '../../components/Header';
-import Footer from '../../components/Footer';
+import Header from '../../components/Header/Header';
 import ProductCard from '../../components/product_components/ProductCard';
 import { fetchWooProducts } from '../../services/apiEcommerce';
 import './ProductList.css';
@@ -68,7 +67,6 @@ const ProductList: React.FC = () => {
           </IonRow>
         </IonGrid>
       </IonContent>
-      <Footer />
     </IonPage>
   );
 };

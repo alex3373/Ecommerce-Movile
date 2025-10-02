@@ -63,11 +63,12 @@ const CategoryList: React.FC = () => {
 
   return (
     <section style={{ padding: 16 }}>
-      <IonText color="primary">
-        <h2 style={{ fontWeight: 600, marginBottom: 16 }}>Categorías Destacadas</h2>
-      </IonText>
-
-      {loading ? (
+      <IonText color="primary" class="ion-text-center">
+      <h2 style={{ fontWeight: 600, marginBottom: 16 }}>
+      Categorias Destacadas 
+      </h2>
+    </IonText>
+          {loading ? (
         <IonSpinner name="crescent" />
       ) : (
         <IonGrid>

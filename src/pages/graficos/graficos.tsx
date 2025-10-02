@@ -8,7 +8,7 @@ import {
 } from '@ionic/react';
 import { GraficoVentasSemanalPorMes } from '../../components/dashboardcomponents/reportes/reportes';
 import { GraficoTortaTopProductos } from '../../components/dashboardcomponents/reportes/graficoProductos';
-import Header from '../../components/Header';
+import Header from '../../components/Header/Header';
 import { GraficoTopClientes } from '../../components/dashboardcomponents/reportes/GraficoTopClientes';
 
 const Reports: React.FC = () => {

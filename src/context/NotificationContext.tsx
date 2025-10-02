@@ -1,4 +1,4 @@
-import React, { createContext, useContext, useState } from 'react';
+import React, { createContext, useContext, useState, useEffect } from 'react';
 
 export interface NotificationItem {
   id: string;
@@ -23,6 +23,7 @@ const NotificationContext = createContext<NotificationContextType | undefined>(u
 export const NotificationProvider: React.FC<{ children: React.ReactNode }> = ({ children }) => {
   const [notifications, setNotifications] = useState<NotificationItem[]>([]);
 
+  // Funciones de manejo de notificaciones
   const addNotification = (title: string, message: string) => {
     const newNotification: NotificationItem = {
       id: Date.now().toString(),
@@ -52,6 +53,18 @@ export const NotificationProvider: React.FC<{ children: React.ReactNode }> = ({ 
     );
   };
 
+  // Simulación de notificaciones cada 10 segundos (solo para prueba)
+  useEffect(() => {
+    const interval = setInterval(() => {
+      addNotification(
+        'Notificación de prueba',
+        `Se generó a las ${new Date().toLocaleTimeString()}`
+      );
+    }, 10000); // 10000 ms = 10 segundos
+
+    return () => clearInterval(interval); // Limpiar al desmontar
+  }, []);
+
   return (
     <NotificationContext.Provider
       value={{ notifications, addNotification, markAsRead, deleteNotification, toggleFavorite }}
@@ -65,17 +78,4 @@ export const useNotificationContext = () => {
   const context = useContext(NotificationContext);
   if (!context) throw new Error("useNotificationContext debe usarse dentro de NotificationProvider");
   return context;
-};
-
-export const requestNotificationPermission = async () => {
-  if ('Notification' in window) {
-    if (Notification.permission === 'default') {
-      const result = await Notification.requestPermission();
-      console.log("Permiso para notificaciones:", result);
-    } else {
-      console.log("Permiso ya configurado:", Notification.permission);
-    }
-  } else {
-    console.log("Las notificaciones no son compatibles con este navegador.");
-  }
 };

@@ -1,7 +1,6 @@
 import React from 'react';
 import { IonPage, IonContent } from '@ionic/react';
-import Header from '../../components/Header';
-import Footer from '../../components/Footer';
+import Header from '../../components/Header/Header';
 import OrderTable from '../../components/dashboardcomponents/OrdenesTable/OrderTable';
 
 const Ordenes: React.FC = () => {

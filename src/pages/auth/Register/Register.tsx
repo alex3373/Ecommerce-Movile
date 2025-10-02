@@ -12,13 +12,10 @@ import {
 } from "@ionic/react";
 import { useState } from "react";
 import styles from "./Register.module.css";
-import Header from "../../../components/Header";
-import Footer from "../../../components/Footer";
+import Header from "../../../components/Header/Header";
 import { registerUser } from "../../../services/auth.service";
 import { useHistory } from "react-router-dom";
 import { registrarEventoAuditoria } from "../../../utils/auditoria";
-import imageCompression from "browser-image-compression";
-import { getStorage, ref, uploadBytes, getDownloadURL } from "firebase/storage";
 
 const Register = () => {
   const [nombre, setNombre] = useState("");
@@ -30,7 +27,6 @@ const Register = () => {
   const [password, setPassword] = useState("");
   const [showToast, setShowToast] = useState(false);
   const [toastMessage, setToastMessage] = useState("");
-  const [profileImage, setProfileImage] = useState<File | null>(null);
   const history = useHistory();
 
   const validateEmail = (email: string) =>
@@ -47,23 +43,6 @@ const Register = () => {
     if (nombre.length < 2 || apellido.length < 2) return showError("Nombre o apellido muy cortos");
 
     try {
-      let photoURL = "";
-      if (profileImage) {
-        // Opciones de compresión
-        const options = {
-          maxSizeMB: 0.1,
-          maxWidthOrHeight: 256,
-          useWebWorker: true,
-        };
-        // Comprime la imagen
-        const compressedFile = await imageCompression(profileImage, options);
-
-        // Sube la imagen a Firebase Storage
-        const storage = getStorage();
-        const storageRef = ref(storage, `profile_photos/${email}_${Date.now()}.jpg`);
-        await uploadBytes(storageRef, compressedFile);
-        photoURL = await getDownloadURL(storageRef);
-      }
       await registerUser(email, password, {
         name: nombre,
         lastName: apellido,
@@ -71,12 +50,10 @@ const Register = () => {
         address: direccion,
         birthDate: fechaNacimiento,
         role: "cliente",
-        photoURL, // <-- Pasa la URL aquí
       });
 
       // guardar evento de registro
       await registrarEventoAuditoria("Registro", email);
-
 
       setToastMessage("¡Cuenta creada exitosamente!");
       setShowToast(true);
@@ -94,11 +71,8 @@ const Register = () => {
 
   return (
     <IonPage>
-        <IonHeader>
-          <IonToolbar color="primary">
-            <IonTitle className="ion-text-center" color="light">Registro</IonTitle>
-          </IonToolbar>
-        </IonHeader>
+              <Header title="Registro" />
+
         <IonContent className="ion-padding">
           <div className={styles.container}>
             <img
@@ -135,19 +109,6 @@ const Register = () => {
               </IonItem>
             ))}
 
-            <IonItem className={styles["input-box"]}>
-              <input
-                type="file"
-                accept="image/*"
-                onChange={e => {
-                  if (e.target.files && e.target.files[0]) {
-                    setProfileImage(e.target.files[0]);
-                  }
-                }}
-                style={{ padding: "8px 0" }}
-              />
-            </IonItem>
-
             <IonButton
               expand="block"
               className={styles["register-button"]}
@@ -173,7 +134,6 @@ const Register = () => {
             duration={3000}
           />
         </IonContent>
-        <Footer />
     </IonPage>
   );
 };

@@ -13,7 +13,7 @@ import { auth, db } from '../../services/firebase'; // Ajusta si tu import de au
 import jsPDF from 'jspdf';
 import autoTable from 'jspdf-autotable';
 
-import Header from '../../components/Header';
+import Header from '../../components/Header/Header';
 
 interface User {
   id: string;

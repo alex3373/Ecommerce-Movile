@@ -1,3 +1,4 @@
+// UserProfile.tsx
 import React, { useEffect, useState } from "react";
 import {
   IonPage,
@@ -7,12 +8,10 @@ import {
   IonAvatar,
   IonCard,
   IonCardContent,
-  IonList,
-  IonItem,
-  IonLabel,
   IonGrid,
   IonRow,
   IonCol,
+  IonItem,
 } from "@ionic/react";
 import {
   pencilOutline,
@@ -24,12 +23,16 @@ import {
 import { useHistory } from "react-router-dom";
 import { auth, db } from "../../services/firebase";
 import { doc, getDoc } from "firebase/firestore";
-import Header from "../../components/Header";
-import './UserProfile.css';
+import Header from "../../components/Header/Header";
+import "./UserProfile.css";
+
+// Si prefieres ocultar el avatar por completo, cámbialo a true
+const HIDE_AVATAR = true;
 
 const UserProfile: React.FC = () => {
   const history = useHistory();
   const [userData, setUserData] = useState<any>(null);
+  const [imgError, setImgError] = useState(false);
 
   useEffect(() => {
     const fetchUserData = async () => {
@@ -48,43 +51,76 @@ const UserProfile: React.FC = () => {
     history.push("/edit-profile");
   };
 
+  const hasPhoto = !!userData?.photoURL && !imgError;
+
   return (
     <IonPage>
       <Header title="Mi Perfil" />
       <IonContent fullscreen className="profile-page-content">
         {/* --- Fondo decorativo del header --- */}
-        <div className="profile-header-background"></div>
+        <div className="profile-header-background" />
 
         {/* --- Contenedor principal del perfil --- */}
         <div className="profile-content-wrapper">
           <IonCard className="profile-main-card">
             <IonCardContent>
               <div className="profile-avatar-section">
-                <IonAvatar className="profile-avatar">
-                  <img
-                    src={userData?.photoURL || "/assets/avatar-default.png"}
-                    alt="Avatar"
-                  />
-                </IonAvatar>
+                {/* Avatar: si existe photoURL lo mostramos, si no mostramos fallback SVG */}
+                {!HIDE_AVATAR && (
+                  <div className="profile-avatar-wrapper">
+                    {hasPhoto ? (
+                      <IonAvatar className="profile-avatar">
+                        <img
+                          src={userData?.photoURL}
+                          alt="Avatar"
+                          onError={() => setImgError(true)}
+                        />
+                      </IonAvatar>
+                    ) : (
+                      <div
+                        className="profile-avatar profile-avatar--fallback"
+                        aria-hidden
+                        title="Avatar genérico"
+                      >
+                        {/* simple SVG estilo caricatura / icono de usuario */}
+                        <svg
+                          viewBox="0 0 24 24"
+                          xmlns="http://www.w3.org/2000/svg"
+                          role="img"
+                          aria-label="Avatar genérico"
+                        >
+                          <rect width="24" height="24" rx="12" fill="#E8F6F4" />
+                          <g transform="translate(4,4)">
+                            <circle cx="8" cy="5.5" r="3.2" fill="#BFEFE7" />
+                            <path
+                              d="M0.5,15 C0.5,11.5 7.5,11.5 15.5,11.5 C15.5,11.5 18,11.5 18,15.5 L18,17 L0.5,17 Z"
+                              fill="#BFEFE7"
+                            />
+                          </g>
+                        </svg>
+                      </div>
+                    )}
+                  </div>
+                )}
+
                 <div className="profile-identity">
                   <h1 className="profile-name">
-                    {userData?.name} {userData?.lastName}
+                    {userData?.name || "Nombre"} {userData?.lastName || ""}
                   </h1>
                   <p className="profile-email">
                     <IonIcon icon={mailOutline} style={{ marginRight: 6 }} />
-                    {userData?.email}
+                    {userData?.email || "email@ejemplo.com"}
                   </p>
                 </div>
+
                 <IonButton
                   className="edit-profile-button"
                   expand="block"
                   fill="outline"
                   color="danger"
                   onClick={handleEditProfile}
-                  style={{ marginTop: 12 }}
                 >
-                  <IonIcon icon={pencilOutline} slot="start" />
-                  Editar Perfil
+                  <IonIcon icon={pencilOutline} slot="start" /> Editar Perfil
                 </IonButton>
               </div>
             </IonCardContent>
@@ -106,6 +142,7 @@ const UserProfile: React.FC = () => {
                       </div>
                     </IonItem>
                   </IonCol>
+
                   <IonCol size="12" size-md="6">
                     <IonItem lines="none" className="profile-field">
                       <IonIcon icon={locationOutline} slot="start" color="danger" />
@@ -118,6 +155,7 @@ const UserProfile: React.FC = () => {
                     </IonItem>
                   </IonCol>
                 </IonRow>
+
                 <IonRow>
                   <IonCol size="12" size-md="6">
                     <IonItem lines="none" className="profile-field">
@@ -130,7 +168,6 @@ const UserProfile: React.FC = () => {
                       </div>
                     </IonItem>
                   </IonCol>
-                  {/* Puedes agregar más campos aquí si lo necesitas */}
                 </IonRow>
               </IonGrid>
             </IonCardContent>

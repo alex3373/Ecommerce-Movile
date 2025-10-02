@@ -78,15 +78,14 @@ useEffect(() => {
 
   return (
     <section style={{ padding: 16 }}>
-      <IonText color="danger">
-        <h2
-          className="ion-padding-start ion-padding-bottom"
-          style={{ fontWeight: 700, fontSize: '1.4rem' }}
-        >
-          🔥 Ofertas del Día
-        </h2>
-      </IonText>
-
+      <IonText color="danger" class="ion-text-center">
+  <h2
+    className="ion-padding-bottom"
+    style={{ fontWeight: 700, fontSize: "1.4rem" }}
+  >
+    🔥 Ofertas Del Día
+  </h2>
+</IonText>
       {loading ? (
         <IonSpinner name="crescent" />
       ) : (

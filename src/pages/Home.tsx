@@ -1,5 +1,5 @@
-import { IonContent, IonPage } from '@ionic/react';
-import Header from '../components/Header';
+import { IonContent, IonPage, IonIcon } from '@ionic/react';
+import Header from '../components/Header/Header';
 import Slider from '../components/homecomponents/Slider/Slider';
 import Searchbar from '../components/searchbarcomponents/Searchbar';
 import CategoryList from '../components/homecomponents/CategoryList/CategoryList';
@@ -8,7 +8,10 @@ import DailyOffers from '../components/homecomponents/DailyOffers/DailyOffers';
 import HowItWorks from '../components/homecomponents/HowItWorks/HowItWorks'; 
 import { useEffect, useState } from 'react';
 import { useHistory, useLocation } from 'react-router-dom';
-import LogoutButton from '../components/Logout';
+import LogoutButton from '../components/Logout/Logout';
+
+// Importar iconos de Ionicons
+import { storefrontOutline } from 'ionicons/icons';
 
 const Home: React.FC = () => {
   const [nombreUsuario, setNombreUsuario] = useState<string | null>(null);
@@ -31,19 +34,25 @@ const Home: React.FC = () => {
 
   return (
     <IonPage>
-      <Header title='Inicio' />
+      <Header title="Inicio" />
       <IonContent fullscreen>
         {/* Bienvenida y botón de logout */}
         {nombreUsuario && (
-          <div style={{ 
-            padding: '16px', 
-            fontSize: '18px', 
-            fontWeight: 'bold', 
-            display: 'flex', 
-            justifyContent: 'space-between', 
-            alignItems: 'center' 
-          }}>
-            <span>👋 ¡Bienvenido, {nombreUsuario}!</span>
+          <div
+            style={{
+              padding: '16px',
+              fontSize: '18px',
+              fontWeight: 'bold',
+              display: 'flex',
+              justifyContent: 'space-between',
+              alignItems: 'center',
+            }}
+          >
+            <div style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
+              <IonIcon icon={storefrontOutline} style={{ fontSize: '1.6rem', color: '#0A9396' }} />
+              <span>¡Bienvenido, {nombreUsuario}!</span>
+            </div>
+            <LogoutButton />
           </div>
         )}
 
@@ -67,7 +76,6 @@ const Home: React.FC = () => {
         <DailyOffers />
         <HowItWorks />
 
-        {/* Espacio para evitar que el contenido se corte con el footer */}
         <div style={{ height: '80px' }}></div>
       </IonContent>
     </IonPage>

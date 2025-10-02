@@ -1,8 +1,7 @@
 import React from "react";
 import ClientOrder from "../../components/pedidoscomponents/ClientOrder";
 import { IonPage, IonContent } from '@ionic/react';
-import Header from '../../components/Header';
-import Footer from '../../components/Footer';
+import Header from '../../components/Header/Header';
 
 const Pedidos: React.FC = () => {
     return (
@@ -11,7 +10,6 @@ const Pedidos: React.FC = () => {
             <IonContent className="ion-padding">
                 <ClientOrder />
             </IonContent>
-            <Footer />
         </IonPage>
     );
 };

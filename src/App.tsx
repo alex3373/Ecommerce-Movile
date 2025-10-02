@@ -4,15 +4,14 @@ import {
   IonApp,
   IonRouterOutlet,
   IonSplitPane,
-  setupIonicReact,
-  useIonAlert
+  setupIonicReact
 } from "@ionic/react";
 import { IonReactRouter } from "@ionic/react-router";
 
 /* Mantenimiento */
 import { getDoc, doc } from 'firebase/firestore';
 import { db } from './services/firebase';
-import Mantenimiento from './components/Mantenimiento';
+import Mantenimiento from './components/Mantenimiento/Mantenimiento';
 
 /* Componentes */
 import SideMenu from './components/SideMenu/SideMenu';
@@ -23,22 +22,12 @@ import Home from "./pages/Home";
 import Login from "./pages/auth/Login/Login";
 import Register from "./pages/auth/Register/Register";
 import ForgotPassword from "./pages/auth/ForgotPassword/ForgotPassword";
-
 import ProductList from "./components/product_components/ProductList";
 import ProductDetail from "./components/product_components/ProductDetail";
 import Pedidos from "./pages/pedidos/Pedidos";
-
 import UserProfile from "./pages/profile/UserProfile";
 import EditProfile from "./pages/profile/EditProfile";
-
-import ChatPage from './pages/chat/ChatPage';
-import HistoryPage from './pages/chat/HistoryPage';
-import FavoritesPage from './pages/chat/FavoritesPage';
-import ChatDetailPage from './pages/chat/ChatDetailPage';
-import NewChatPage from './pages/chat/NewChatPage';
-import SelectMessagePage from './pages/chat/SelectMessagePage';
 import Payment from './pages/payment/payment';
-
 import Dashboard from './pages/dashboard/dashboard';
 import Server from './pages/server/server';
 import Reports from './pages/reports/reports';
@@ -49,16 +38,13 @@ import Finanzas from './pages/finanzas/finanzas';
 import Auditoria from './pages/auditoria/auditoria';
 import Soporte from './pages/Soporte/soporte';
 import MensajesSoporte from './pages/mensajesSoporte/mensajesSoporte';
-
 import NotificationsPage from "./pages/notifications/NoticationsPage";
 import NotificationDetailPage from "./pages/notifications/NotificationDetailPage";
-
-/* Contexto y servicios */
-import { NotificationProvider, useNotificationContext } from './context/NotificationContext';
-import { simulateMockNotifications } from './services/mockNotificationService';
-
 import Selector from './pages/Selector';
 import GuestHome from './pages/GuestHome';
+
+/* Contexto */
+import { NotificationProvider } from './context/NotificationContext';
 
 /* CSS */
 import "@ionic/react/css/core.css";
@@ -76,7 +62,7 @@ import "./App.css";
 import 'leaflet/dist/leaflet.css';
 import { Capacitor } from '@capacitor/core';
 import { StatusBar } from '@capacitor/status-bar';
-
+import Cart from "./components/cart/Cart";
 setupIonicReact();
 
 if (Capacitor.getPlatform() === 'android') {
@@ -85,8 +71,6 @@ if (Capacitor.getPlatform() === 'android') {
 }
 
 const AppContent: React.FC = () => {
-  const { addNotification } = useNotificationContext();
-  const [presentAlert] = useIonAlert();
   const [isMaintenance, setIsMaintenance] = useState<boolean | null>(null);
 
   useEffect(() => {
@@ -106,29 +90,8 @@ const AppContent: React.FC = () => {
     };
 
     fetchMaintenance();
-
-    if ('Notification' in window && Notification.permission === 'default') {
-      presentAlert({
-        header: 'Permiso de notificaciones',
-        message: '¿Deseas activar las notificaciones para mantenerte al tanto de novedades?',
-        buttons: [
-          { text: 'No', role: 'cancel' },
-          {
-            text: 'Sí',
-            handler: async () => {
-              const permission = await Notification.requestPermission();
-              console.log('Permiso:', permission);
-            },
-          },
-        ],
-        backdropDismiss: false,
-      });
-    }
-
-    simulateMockNotifications(addNotification);
   }, []);
 
-  // SI ESTÁ EN MANTENIMIENTO
   if (isMaintenance) {
     return <Mantenimiento />;
   }
@@ -150,13 +113,8 @@ const AppContent: React.FC = () => {
       <Route exact path="/soporte" component={Soporte} />
       <Route exact path="/payment" component={Payment} />
 
-      {/* Chat */}
-      <Route exact path="/chat" component={ChatPage} />
-      <Route exact path="/chat/:id" component={ChatDetailPage} />
-      <Route exact path="/history" component={HistoryPage} />
-      <Route exact path="/favorites" component={FavoritesPage} />
-      <Route exact path="/new-chat" component={NewChatPage} />
-      <Route exact path="/contact-seller/:sellerId" component={SelectMessagePage} />
+      {/* NUEVA RUTA DEL CARRITO */}
+      <Route exact path="/cart" component={Cart} />
 
       {/* Admin Pages */}
       <PrivateRoute exact path="/dashboard" allowedRole="admin" component={Dashboard} />

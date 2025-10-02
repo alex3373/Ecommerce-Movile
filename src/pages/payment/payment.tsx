@@ -1,15 +1,14 @@
 import React, { useEffect, useState } from 'react';
 import {
   IonPage, IonHeader, IonToolbar, IonTitle, IonContent, IonInput,
-  IonItem, IonLabel, IonButton, IonSelect, IonSelectOption,
-  IonList
+  IonItem, IonLabel, IonButton, IonSelect, IonSelectOption, IonList
 } from '@ionic/react';
 import { addDoc, collection, Timestamp } from 'firebase/firestore';
 import { auth, db } from '../../services/firebase';
 import './Payment.css';
 
 const Payment: React.FC = () => {
-  const [product, setProduct] = useState<any>(null);
+  const [cart, setCart] = useState<any[]>([]);
 
   // Datos cliente
   const [nombre, setNombre] = useState('');
@@ -20,19 +19,11 @@ const Payment: React.FC = () => {
   const [direccion, setDireccion] = useState('');
   const [correo, setCorreo] = useState('');
 
-  // Lógica de precios para futuro escalamiento
-  const [precioProveedor, setPrecioProveedor] = useState(0);
-  const [precioVenta, setPrecioVenta] = useState(0);
-
   useEffect(() => {
     const stored = localStorage.getItem('productoSeleccionado');
     if (stored) {
-      const prod = JSON.parse(stored);
-      setProduct(prod);
-      const precio = parseFloat(prod.price);
-      const sugerido = Math.round(precio * 1.2);
-      setPrecioProveedor(precio);
-      setPrecioVenta(sugerido);
+      const productos = JSON.parse(stored); // ahora puede ser un array
+      setCart(productos);
     }
   }, []);
 
@@ -40,33 +31,35 @@ const Payment: React.FC = () => {
     const user = auth.currentUser;
     if (!user) return alert('Debes iniciar sesión');
 
-    const orden = {
-      productoId: product?.id,
-      nombreProducto: product?.name,
-      precioProveedor,
-      precioVenta,
-      usuario: user.email || user.displayName || 'desconocido',
-      userId: user.uid,
-      fecha: Timestamp.fromDate(new Date()), // ← Guardado como Timestamp
-      estado: 'En revisión',
-      cliente: {
-        nombre, apellido, telefono, region, comuna, direccion, correo
-      }
-    };
-
     try {
-      await addDoc(collection(db, 'order'), orden);
+      for (const product of cart) {
+        await addDoc(collection(db, 'order'), {
+          productoId: product.id,
+          nombreProducto: product.name,
+          precioProveedor: parseFloat(product.price),
+          precioVenta: Math.round(parseFloat(product.price) * 1.2),
+          usuario: user.email || user.displayName || 'desconocido',
+          userId: user.uid,
+          fecha: Timestamp.fromDate(new Date()),
+          estado: 'En revisión',
+          cliente: {
+            nombre, apellido, telefono, region, comuna, direccion, correo
+          }
+        });
+      }
       alert('Orden registrada con éxito');
+      localStorage.removeItem('productoSeleccionado');
+      setCart([]);
     } catch (err) {
       console.error(err);
       alert('Error al registrar orden');
     }
   };
 
-  if (!product) {
+  if (cart.length === 0) {
     return (
       <IonPage>
-        <IonContent className="ion-padding">Cargando producto…</IonContent>
+        <IonContent className="ion-padding">No hay productos en el carrito…</IonContent>
       </IonPage>
     );
   }
@@ -100,8 +93,8 @@ const Payment: React.FC = () => {
               <IonSelectOption value="La Araucanía">La Araucanía</IonSelectOption>
               <IonSelectOption value="Los Ríos">Los Ríos</IonSelectOption>
               <IonSelectOption value="Los Lagos">Los Lagos</IonSelectOption>
-              <IonSelectOption value="Aysén del General Carlos Ibáñez del Campo">Aysén</IonSelectOption>
-              <IonSelectOption value="Magallanes y de la Antártica Chilena">Magallanes</IonSelectOption>
+              <IonSelectOption value="Aysén">Aysén</IonSelectOption>
+              <IonSelectOption value="Magallanes">Magallanes</IonSelectOption>
             </IonSelect>
           </IonItem>
           <IonItem><IonLabel position="floating">Comuna</IonLabel><IonInput value={comuna} onIonChange={e => setComuna(e.detail.value!)} /></IonItem>
@@ -110,8 +103,11 @@ const Payment: React.FC = () => {
         </IonList>
 
         <div style={{ marginTop: '2rem', marginBottom: '1rem' }}>
-          <h2>{product.name}</h2>
-          <p><strong>Precio:</strong> ${precioVenta.toLocaleString()}</p>
+          <h2>Productos en el carrito</h2>
+          {cart.map((prod, index) => (
+            <p key={index}>{prod.name} - ${prod.price}</p>
+          ))}
+          <p><strong>Total:</strong> ${cart.reduce((sum, p) => sum + parseFloat(p.price), 0).toLocaleString()}</p>
         </div>
 
         <IonButton expand="block" onClick={handleEnviarOrden}>

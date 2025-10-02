@@ -1,7 +1,6 @@
 import { IonContent, IonPage, IonCard, IonIcon, IonText } from '@ionic/react';
 import { settingsOutline } from 'ionicons/icons';
-import Header from '../../components/Header';
-import Footer from '../../components/Footer';
+import Header from '../../components/Header/Header';
 import UserTable from '../../components/dashboardcomponents/UserTable/UserTable';
 import Pagination from '../../components/dashboardcomponents/Pagination/Pagination';
 import InfoCards from '../../components/dashboardcomponents/InfoCards/InfoCards';

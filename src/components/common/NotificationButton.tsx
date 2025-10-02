@@ -15,15 +15,15 @@ const NotificationButton: React.FC = () => {
 
   return (
     <div className="notification-container">
-      <IonIcon
-        icon={notificationsOutline}
-        size="large"
-        onClick={(e) => {
-          setEvent(e.nativeEvent);
-          setShowPopover(true);
-        }}
-        style={{ cursor: 'pointer' }}
-      />
+        <IonIcon
+    icon={notificationsOutline}
+    size="large"
+    style={{ cursor: 'pointer', color: 'var(--ion-color-primary)' }}
+    onClick={(e) => {
+      setEvent(e.nativeEvent);
+      setShowPopover(true);
+    }}
+  />
       {unreadCount > 0 && <span className="badge">{unreadCount}</span>}
 
       <IonPopover

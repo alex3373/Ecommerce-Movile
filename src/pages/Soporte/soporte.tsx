@@ -16,7 +16,7 @@ import {
 } from "@ionic/react";
 import { chatbubbleEllipsesOutline } from "ionicons/icons";
 import { useState } from "react";
-import Header from "../../components/Header";
+import Header from "../../components/Header/Header";
 
 // Firestore
 import { collection, addDoc, Timestamp } from "firebase/firestore";

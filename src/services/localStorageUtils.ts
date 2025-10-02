@@ -52,21 +52,3 @@ export const updateContactFavoriteStatus = (id: string, isFav: boolean) => {
     saveFavoritesToLocalStorage(favorites);
   }
 };
-
-export const startChatWithSeller = (sellerId: string, sellerName: string) => {
-  const contacts = getContactsFromLocalStorage();
-  const exists = contacts.find(c => c.id === sellerId);
-  if (!exists) {
-    const newContact = {
-      id: sellerId,
-      name: sellerName,
-      avatar: `https://i.pravatar.cc/150?img=${sellerId}`,
-      messages: [
-        { text: `Hola ${sellerName}, quiero consultar sobre un producto`, sender: 'cliente' },
-      ],
-      isFavorite: false,
-    };
-    contacts.push(newContact);
-    saveContactsToLocalStorage(contacts);
-  }
-};

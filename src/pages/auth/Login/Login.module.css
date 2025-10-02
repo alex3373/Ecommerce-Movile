@@ -1,37 +1,65 @@
-/* Estilos para el logo */
+/* Fondo general */
+ion-page {
+  --background: #f5f7fa; /* gris muy claro, más limpio */
+}
+
+/* Contenedor del logo */
 .logoContainer {
   display: flex;
   justify-content: center;
-  margin-top: 1.5rem; /* margen superior */
-  margin-bottom: 1.5rem; /* margen inferior */
+  margin-top: 2rem;
+  margin-bottom: 1.5rem;
 }
 
 .logo {
-  width: 150px;
+  width: 120px;
   height: auto;
 }
 
-/* Estilos para formulario */
+/* Formulario */
 .form {
   display: flex;
   flex-direction: column;
-  gap: 0.75rem; /* gap entre los elementos */
-  margin-top: 2rem;
+  gap: 1rem;
+  margin-top: 1rem;
   width: 100%;
-  max-width: 400px;
+  max-width: 360px; /* más compacto para móvil */
   margin-left: auto;
   margin-right: auto;
-  padding: 0 1rem;
+  padding: 0 1.2rem;
+  background: #fff;
+  border-radius: 12px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+  padding-top: 2rem;
+  padding-bottom: 2rem;
 }
 
-/* Estilos para "ForgotPassword" */
+/* Labels e inputs */
+ion-item {
+  --highlight-color-focused: #3880ff;
+  --border-radius: 8px;
+  margin-bottom: 0.5rem;
+}
+
+ion-label {
+  font-size: 14px;
+  color: #444;
+}
+
+ion-input {
+  font-size: 15px;
+}
+
+/* Link de "Olvidaste tu contraseña" */
 .forgotPasswordLink {
-  text-align: center;
+  text-align: right;
+  margin-top: 0.5rem;
 }
 
 .forgotPasswordLink a {
   color: #3880ff;
-  font-weight: bold;
+  font-size: 14px;
+  font-weight: 500;
   text-decoration: none;
 }
 
@@ -39,67 +67,50 @@
   text-decoration: underline;
 }
 
-/* Estilos para el botón "Iniciar sesión" */
+/* Botón de Iniciar sesión */
 form ion-button[type="submit"] {
-  --background: #3880ff;
-  --border-radius: 8px;
-  --padding-start: 24px;
-  --padding-end: 24px;
+  --border-radius: 10px;
+  --padding-start: 20px;
+  --padding-end: 20px;
   --font-size: 16px;
-  margin-top: 1rem; /* margen superior */
-  font-weight: bold;
-  text-transform: none; /* quitar uppercase de texto */
+  margin-top: 1.2rem;
+  font-weight: 600;
+  text-transform: none;
+  height: 48px;
 }
 
-/* Botón deshabilitado */
 form ion-button[type="submit"].disabledButton {
-  --background: #b8d8ff;
-  --color: #8f9bb3;
-  cursor: not-allowed;
+  --background: #cbd5e1;
+  --color: #94a3b8;
 }
 
-/* Estilos para los mensajes de error */
+/* Mensaje de error */
 .error {
-  color: red;
+  color: #e11d48;
   font-size: 14px;
   text-align: center;
-  margin-top: 1rem;
+  margin-top: 0.8rem;
 }
 
-h2 {
-  font-size: 24px;
-  text-align: center;
-  color: #222;
-  margin-bottom: 1rem;
-}
-
-ion-label {
-  font-size: 14px;
-  color: #666;
-}
-
-ion-page {
-  background-color: #f9f9f9;
-}
-
-/* Estilos para el botón de "Regístrar" */
-.registerButton {
-  --background: #3880ff;
-  --border-radius: 8px;
-  --padding-start: 24px;
-  --padding-end: 24px;
-  --font-size: 16px; /* tamaño de la fuente */
-  color: #fff; /* color del texto */
-  font-weight: bold;
-  text-align: center;
-  text-transform: none; /* quitar uppercase de texto */
-  margin-top: -1rem; /* reducir margen superior NO MODIFICAR */
-}
-
-/* Estilos para el título "¿No tienes cuenta?" */
+/* Texto "¿No tienes cuenta?" */
 .registerPrompt {
   text-align: center;
-  font-size: 16px;
-  color: #888;
-  margin-top: 1rem;
+  font-size: 15px;
+  color: #666;
+  margin-top: 1.2rem;
+}
+
+/* Botón de registro */
+.registerButton {
+  --background: #4ade80; /* verde llamativo */
+  --border-radius: 10px;
+  --padding-start: 20px;
+  --padding-end: 20px;
+  --font-size: 16px;
+  color: #fff;
+  font-weight: 600;
+  text-align: center;
+  text-transform: none;
+  height: 48px;
+  margin-top: 0.5rem;
 }
