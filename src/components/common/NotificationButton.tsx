@@ -18,7 +18,7 @@ const NotificationButton: React.FC = () => {
         <IonIcon
     icon={notificationsOutline}
     size="large"
-    style={{ cursor: 'pointer', color: 'var(--ion-color-primary)' }}
+    style={{ cursor: 'pointer', color: '#fff', fontSize: '30px' }}
     onClick={(e) => {
       setEvent(e.nativeEvent);
       setShowPopover(true);

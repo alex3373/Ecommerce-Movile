@@ -1,10 +1,10 @@
 import React, { useEffect, useState } from 'react';
 import {
-  IonPage, IonHeader, IonToolbar, IonTitle, IonContent, IonInput,
-  IonItem, IonLabel, IonButton, IonSelect, IonSelectOption, IonList
+  IonPage, IonContent, IonList, IonItem, IonLabel, IonInput, IonButton, IonSelect, IonSelectOption
 } from '@ionic/react';
 import { addDoc, collection, Timestamp } from 'firebase/firestore';
 import { auth, db } from '../../services/firebase';
+import Header from '../../components/Header/Header'; // Ajusta según tu ruta
 import './Payment.css';
 
 const Payment: React.FC = () => {
@@ -42,9 +42,7 @@ const Payment: React.FC = () => {
           userId: user.uid,
           fecha: Timestamp.fromDate(new Date()),
           estado: 'En revisión',
-          cliente: {
-            nombre, apellido, telefono, region, comuna, direccion, correo
-          }
+          cliente: { nombre, apellido, telefono, region, comuna, direccion, correo }
         });
       }
       alert('Orden registrada con éxito');
@@ -59,23 +57,29 @@ const Payment: React.FC = () => {
   if (cart.length === 0) {
     return (
       <IonPage>
+        <Header title="Resumen de orden" />
         <IonContent className="ion-padding">No hay productos en el carrito…</IonContent>
       </IonPage>
     );
   }
 
   return (
-    <IonPage>
-      <IonHeader>
-        <IonToolbar>
-          <IonTitle>Resumen de orden</IonTitle>
-        </IonToolbar>
-      </IonHeader>
+    <IonPage className="payment-page">
+      <Header title="Resumen de orden" />
       <IonContent className="ion-padding">
         <IonList>
-          <IonItem><IonLabel position="floating">Nombre</IonLabel><IonInput value={nombre} onIonChange={e => setNombre(e.detail.value!)} /></IonItem>
-          <IonItem><IonLabel position="floating">Apellido</IonLabel><IonInput value={apellido} onIonChange={e => setApellido(e.detail.value!)} /></IonItem>
-          <IonItem><IonLabel position="floating">Teléfono</IonLabel><IonInput value={telefono} onIonChange={e => setTelefono(e.detail.value!)} /></IonItem>
+          <IonItem>
+            <IonLabel position="floating">Nombre</IonLabel>
+            <IonInput value={nombre} onIonChange={e => setNombre(e.detail.value!)} />
+          </IonItem>
+          <IonItem>
+            <IonLabel position="floating">Apellido</IonLabel>
+            <IonInput value={apellido} onIonChange={e => setApellido(e.detail.value!)} />
+          </IonItem>
+          <IonItem>
+            <IonLabel position="floating">Teléfono</IonLabel>
+            <IonInput value={telefono} onIonChange={e => setTelefono(e.detail.value!)} />
+          </IonItem>
           <IonItem>
             <IonLabel>Región</IonLabel>
             <IonSelect value={region} onIonChange={e => setRegion(e.detail.value!)} interface="popover">
@@ -97,17 +101,31 @@ const Payment: React.FC = () => {
               <IonSelectOption value="Magallanes">Magallanes</IonSelectOption>
             </IonSelect>
           </IonItem>
-          <IonItem><IonLabel position="floating">Comuna</IonLabel><IonInput value={comuna} onIonChange={e => setComuna(e.detail.value!)} /></IonItem>
-          <IonItem><IonLabel position="floating">Dirección</IonLabel><IonInput value={direccion} onIonChange={e => setDireccion(e.detail.value!)} /></IonItem>
-          <IonItem><IonLabel position="floating">Correo</IonLabel><IonInput value={correo} onIonChange={e => setCorreo(e.detail.value!)} /></IonItem>
+          <IonItem>
+            <IonLabel position="floating">Comuna</IonLabel>
+            <IonInput value={comuna} onIonChange={e => setComuna(e.detail.value!)} />
+          </IonItem>
+          <IonItem>
+            <IonLabel position="floating">Dirección</IonLabel>
+            <IonInput value={direccion} onIonChange={e => setDireccion(e.detail.value!)} />
+          </IonItem>
+          <IonItem>
+            <IonLabel position="floating">Correo</IonLabel>
+            <IonInput value={correo} onIonChange={e => setCorreo(e.detail.value!)} />
+          </IonItem>
         </IonList>
 
-        <div style={{ marginTop: '2rem', marginBottom: '1rem' }}>
-          <h2>Productos en el carrito</h2>
+        <div className="payment-cart">
+          <h2 className="payment-cart-header">Productos en el carrito</h2>
           {cart.map((prod, index) => (
-            <p key={index}>{prod.name} - ${prod.price}</p>
+            <div key={index} className="payment-cart-item">
+              <span>{prod.name}</span>
+              <span>${parseFloat(prod.price).toLocaleString()}</span>
+            </div>
           ))}
-          <p><strong>Total:</strong> ${cart.reduce((sum, p) => sum + parseFloat(p.price), 0).toLocaleString()}</p>
+          <p className="payment-total">
+            Total: ${cart.reduce((sum, p) => sum + parseFloat(p.price), 0).toLocaleString()}
+          </p>
         </div>
 
         <IonButton expand="block" onClick={handleEnviarOrden}>

@@ -99,3 +99,8 @@ ion-item:hover {
 .custom-header ion-button {
     --color: #fff; /* Hace que los botones como "Usuario" se vean blancos */
 }
+
+.notification-icon {
+    color: #fff;
+    font-size: 30px;
+}

@@ -3,6 +3,7 @@ import { IonPage, IonContent, IonList, IonItem, IonLabel, IonButton, IonIcon } f
 import { getCart, removeFromCart, clearCart } from "../../services/cartService";
 import { trashOutline } from "ionicons/icons";
 import { useHistory } from "react-router-dom";
+import Header from "../Header/Header"; // Ajusta la ruta según tu proyecto
 
 const Cart: React.FC = () => {
   const [cart, setCart] = useState<any[]>([]);
@@ -35,8 +36,8 @@ const Cart: React.FC = () => {
 
   return (
     <IonPage>
+      <Header title="Mi Carrito" />
       <IonContent className="ion-padding">
-        <h2>🛒 Mi Carrito</h2>
         {cart.length === 0 ? (
           <p>El carrito está vacío</p>
         ) : (

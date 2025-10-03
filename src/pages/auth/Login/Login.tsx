@@ -93,7 +93,7 @@ const Login = () => {
 
 
           <IonText className={styles.registerPrompt}>
-            <p>¿No tienes cuenta? Únete a nuestra familia aquí</p>
+            <p>¿No tienes cuenta? Únete aquí</p>
           </IonText>
 
           <IonButton expand="block" onClick={() => history.push("/register")} className={styles.registerButton}>

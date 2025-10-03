@@ -1,5 +1,7 @@
 import React from "react";
 import { registrarEventoAuditoria } from "../../utils/auditoria";
+import { signOut } from "firebase/auth";
+import { auth } from "../../services/firebase";
 
 const LogoutButton: React.FC = () => {
     const handleLogout = async () => {
@@ -9,10 +11,15 @@ const LogoutButton: React.FC = () => {
             await registrarEventoAuditoria("Cierre de sesión", usuario.email);
         }
 
-        localStorage.removeItem("usuario_actual");
-        console.log("✅ Sesión cerrada correctamente");
-        window.alert("Sesión cerrada exitosamente");
-        window.location.href = "/login";
+        try {
+            await signOut(auth); // 👈 Cierra la sesión en Firebase también
+            localStorage.removeItem("usuario_actual");
+            console.log("✅ Sesión cerrada correctamente");
+            window.alert("Sesión cerrada exitosamente");
+            window.location.href = "/login";
+        } catch (error) {
+            console.error("❌ Error al cerrar sesión:", error);
+        }
     };
 
     return (

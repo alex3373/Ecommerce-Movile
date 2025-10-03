@@ -99,19 +99,19 @@ const AppContent: React.FC = () => {
   return (
     <IonRouterOutlet id="main-content">
       <Route exact path="/" component={GuestHome} />
-      <Route exact path="/home" component={Home} />
+      <PrivateRoute exact path="/home" component={Home} />
       <Route exact path="/login" component={Login} />
       <Route exact path="/register" component={Register} />
       <Route exact path="/forgot-password" component={ForgotPassword} />
       <Route exact path="/ProductList" component={ProductList} />
       <Route exact path="/products" component={ProductList} />
-      <Route exact path="/products/:id" component={ProductDetail} />
-      <Route exact path="/productos" component={ProductList} />
-      <Route exact path="/profile" component={UserProfile} />
-      <Route exact path="/edit-profile" component={EditProfile} />
-      <Route exact path="/pedidos" component={Pedidos} />
-      <Route exact path="/soporte" component={Soporte} />
-      <Route exact path="/payment" component={Payment} />
+      <PrivateRoute exact path="/products/:id" component={ProductDetail} />
+      <PrivateRoute exact path="/productos" component={ProductList} />
+      <PrivateRoute exact path="/profile" component={UserProfile} />
+      <PrivateRoute exact path="/edit-profile" component={EditProfile} />
+      <PrivateRoute exact path="/pedidos" component={Pedidos} />
+      <PrivateRoute exact path="/soporte" component={Soporte} />
+      <PrivateRoute exact path="/payment" component={Payment} />
 
       {/* NUEVA RUTA DEL CARRITO */}
       <Route exact path="/cart" component={Cart} />
@@ -129,8 +129,8 @@ const AppContent: React.FC = () => {
       <PrivateRoute exact path="/soporteMensajes" allowedRole="admin" component={MensajesSoporte} />
 
       {/* Notifications */}
-      <Route exact path="/notifications" component={NotificationsPage} />
-      <Route exact path="/notifications/:id" component={NotificationDetailPage} />
+      <PrivateRoute exact path="/notifications" component={NotificationsPage} />
+      <PrivateRoute exact path="/notifications/:id" component={NotificationDetailPage} />
 
       {/* Fallback */}
       <Redirect to="/" />

@@ -1,11 +1,10 @@
 // src/components/PrivateRoute.tsx
-
 import React from "react";
 import { Route, Redirect, RouteProps } from "react-router-dom";
 import { getCurrentUser } from "../utils/auth";
 
 interface PrivateRouteProps extends RouteProps {
-  allowedRole: string; // Rol requerido (ej. "admin" o "cliente")
+  allowedRole?: string; // Opcional
   component: React.ComponentType<any>;
 }
 
@@ -14,22 +13,25 @@ const PrivateRoute: React.FC<PrivateRouteProps> = ({
   component: Component,
   ...rest
 }) => {
-  const user = getCurrentUser();
+  const user = getCurrentUser(); // Devuelve null si no hay usuario
 
   return (
     <Route
       {...rest}
-      render={(props) =>
-        user ? (
-          user.role === allowedRole ? (
-            <Component {...props} />
-          ) : (
-            <Redirect to="/home" />
-          )
-        ) : (
-          <Redirect to="/login" />
-        )
-      }
+      render={(props) => {
+        if (!user) {
+          // No hay usuario → redirige a login
+          return <Redirect to="/login" />;
+        }
+
+        if (allowedRole && user.role !== allowedRole) {
+          // Usuario logueado pero no tiene el rol permitido
+          return <Redirect to="/home" />;
+        }
+
+        // Usuario logueado y rol correcto (o no se requiere rol)
+        return <Component {...props} />;
+      }}
     />
   );
 };

@@ -22,8 +22,6 @@ interface HeaderProps {
 
 const Header: React.FC<HeaderProps> = ({ title }) => {
     const [user, setUser] = useState<User | null>(null);
-    const [showPopover, setShowPopover] = useState(false);
-    const [event, setEvent] = useState<MouseEvent | undefined>(undefined);
     const history = useHistory();
 
     useEffect(() => {
@@ -32,12 +30,6 @@ const Header: React.FC<HeaderProps> = ({ title }) => {
         });
         return () => unsubscribe();
     }, []);
-
-    const openPopover = (e: React.MouseEvent<HTMLIonButtonElement, MouseEvent>) => {
-        e.persist();
-        setEvent(e.nativeEvent);
-        setShowPopover(true);
-    };
 
     return (
         <IonHeader>
@@ -58,13 +50,14 @@ const Header: React.FC<HeaderProps> = ({ title }) => {
                 </div>
                 
                 <IonButtons slot="end">
-                    <NotificationButton />
-
-                    {/* Botón de carrito solo si hay usuario logueado */}
+                    {/* Solo mostrar notificaciones y carrito si hay usuario */}
                     {user && (
-                        <IonButton onClick={() => history.push("/cart")}>
-                            <IonIcon icon={cartOutline} />
+                        <>
+                            <NotificationButton />
+                            <IonButton onClick={() => history.push("/cart")}>
+                            <IonIcon icon={cartOutline} style={{ color: "white", fontSize: "30px" }} />
                         </IonButton>
+                        </>
                     )}
                 </IonButtons>
             </IonToolbar>

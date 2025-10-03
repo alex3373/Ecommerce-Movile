@@ -7,10 +7,9 @@ import {
   IonRow, 
   IonCol, 
   IonText, 
-  IonButton, 
   IonSpinner 
 } from "@ionic/react";
-import ProductDetailHeader from "./ProductDetailHeader";
+import Header from "../../components/Header/Header";
 import ProductImage from "./ProductImage";
 import ProductInfo from "./ProductInfo";
 import { fetchWooProductById, WooProduct } from "../../services/apiEcommerce"; 
@@ -41,7 +40,7 @@ const ProductDetail: React.FC = () => {
   if (loading) {
     return (
       <IonPage>
-        <ProductDetailHeader title="Cargando..." onBack={history.goBack} />
+        <Header title="Cargando..." />
         <IonContent className="ion-padding">
           <IonSpinner name="dots" />
         </IonContent>
@@ -52,7 +51,7 @@ const ProductDetail: React.FC = () => {
   if (error || !product) {
     return (
       <IonPage>
-        <ProductDetailHeader title="Producto no encontrado" onBack={history.goBack} />
+        <Header title="Producto no encontrado" />
         <IonContent className="ion-padding">
           <IonText color="primary"><h2>No encontrado</h2></IonText>
         </IonContent>
@@ -62,7 +61,7 @@ const ProductDetail: React.FC = () => {
 
   return (
     <IonPage>
-      <ProductDetailHeader title={product.name} onBack={history.goBack} />
+      <Header title={product.name} />
       <IonContent fullscreen className="product-detail-bg">
         <div className="product-detail-container">
           <IonGrid className="product-detail-grid">
@@ -72,8 +71,6 @@ const ProductDetail: React.FC = () => {
               </IonCol>
               <IonCol size="12" sizeMd="6">
                 <ProductInfo product={product} />
-
-                
               </IonCol>
             </IonRow>
           </IonGrid>
