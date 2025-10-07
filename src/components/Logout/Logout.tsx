@@ -16,7 +16,7 @@ const LogoutButton: React.FC = () => {
             localStorage.removeItem("usuario_actual");
             console.log("✅ Sesión cerrada correctamente");
             window.alert("Sesión cerrada exitosamente");
-            window.location.href = "/login";
+            window.location.href = "/";
         } catch (error) {
             console.error("❌ Error al cerrar sesión:", error);
         }

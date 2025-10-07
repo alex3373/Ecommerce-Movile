@@ -103,15 +103,13 @@ const CategoryList: React.FC = () => {
                       borderTopRightRadius: 12,
                     }}
                   />
-                  <IonCardContent
-                    style={{
-                      fontWeight: 500,
-                      fontSize: '0.95rem',
-                      color: 'black',
-                    }}
-                  >
-                    {category.name} ({category.count})
-                  </IonCardContent>
+                 <IonCardContent>
+              <IonText style={{ color: 'var(--ion-color-primary-shade)' }}>
+                <p style={{ fontWeight: 500, fontSize: '0.95rem' }}>
+                  {category.name} ({category.count})
+                </p>
+              </IonText>
+            </IonCardContent>
                 </IonCard>
               </IonCol>
             ))}

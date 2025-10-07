@@ -141,7 +141,12 @@ const ProductList: React.FC = () => {
         />
 
         {/* 🗂 Categorías */}
-        <h2 className="text-lg font-bold mb-4">Categorías</h2>
+        <h2
+          className="text-lg font-bold mb-4"
+          style={{ color: 'var(--ion-color-primary-shade)' }}
+        >
+          Categorías
+        </h2>
         <div style={{ display: 'flex', flexWrap: 'wrap', gap: '10px', marginBottom: '10px' }}>
           {currentCategories.map((cat) => (
            <IonButton
@@ -174,7 +179,10 @@ const ProductList: React.FC = () => {
 
 
         {/* 🛒 Productos */}
-        <h2 className="text-lg font-bold mb-4">
+        <h2
+          className="text-lg font-bold mb-4"
+          style={{ color: 'var(--ion-color-primary-shade)' }}
+        >
           {searchParam
             ? `Resultados de búsqueda: "${searchParam}"`
             : categoriaId
@@ -185,7 +193,9 @@ const ProductList: React.FC = () => {
         </h2>
 
         {products.length === 0 && !loadingProducts ? (
-          <IonText>No hay productos para mostrar.</IonText>
+          <IonText style={{ color: 'var(--ion-color-primary-shade)' }}>
+            No hay productos para mostrar.
+          </IonText>
         ) : (
           <>
             <IonGrid className="product-grid">

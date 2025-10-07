@@ -16,7 +16,6 @@ ion-footer ion-toolbar {
   padding-bottom: 4px;
 }
 
-
 .footer-title {
   font-size: 0.9rem;
   font-weight: bold;
@@ -24,24 +23,16 @@ ion-footer ion-toolbar {
   color: black;
 }
 
-
-.fixed-footer {
-  position: fixed;
-  bottom: 0;
-  width: 100%;
-  z-index: 5;
-  border-radius: 10px 10px 0 0;
-}
-
 .footer-container {
   display: flex;
   flex-direction: column;
   align-items: center;
 }
+
 .footer-row {
   display: flex;
-  gap: 16px; /* espacio horizontal entre textos */
-  flex-wrap: wrap; /* permite que se acomode en móviles */
+  gap: 16px;
+  flex-wrap: wrap;
   justify-content: center;
 }
 
@@ -50,7 +41,6 @@ ion-footer ion-toolbar {
   font-size: 0.85rem;
   color: #000;
 }
-
 
 .footer-link {
   color: #110b44;

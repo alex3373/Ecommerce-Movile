@@ -60,7 +60,7 @@ export const NotificationProvider: React.FC<{ children: React.ReactNode }> = ({ 
         'Notificación de prueba',
         `Se generó a las ${new Date().toLocaleTimeString()}`
       );
-    }, 10000); // 10000 ms = 10 segundos
+    }, 10000000000000); 
 
     return () => clearInterval(interval); // Limpiar al desmontar
   }, []);

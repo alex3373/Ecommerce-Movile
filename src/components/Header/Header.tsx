@@ -34,29 +34,33 @@ const Header: React.FC<HeaderProps> = ({ title }) => {
     return (
         <IonHeader>
             <IonToolbar className="custom-header">
-                {/* Botón de menú hamburguesa a la izquierda */}
+
+                {/* Menú hamburguesa */}
                 <IonButtons slot="start">
                     <IonMenuButton />
                 </IonButtons>
 
-                {/* Título centrado con logo */}
+                {/* Contenedor centrado con logo y título */}
                 <div className="title-with-logo">
-                    <IonTitle>{title}</IonTitle>
                     <IonImg 
                         src="./assets/logo_ecommerce.png" 
                         className="header-logo"
                         alt="Logo"
                     />
+                    <IonTitle>{title}</IonTitle>
                 </div>
-                
+
+                {/* Notificaciones y carrito */}
                 <IonButtons slot="end">
-                    {/* Solo mostrar notificaciones y carrito si hay usuario */}
                     {user && (
                         <>
                             <NotificationButton />
                             <IonButton onClick={() => history.push("/cart")}>
-                            <IonIcon icon={cartOutline} style={{ color: "white", fontSize: "30px" }} />
-                        </IonButton>
+                                <IonIcon 
+                                    icon={cartOutline} 
+                                    style={{ color: "white", fontSize: "28px" }} 
+                                />
+                            </IonButton>
                         </>
                     )}
                 </IonButtons>

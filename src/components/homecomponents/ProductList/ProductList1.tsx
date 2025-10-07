@@ -64,7 +64,7 @@ useEffect(() => {
               />
 
               <IonCardContent className="ion-text-center">
-                <IonText color="dark">
+                <IonText style={{ color: 'var(--ion-color-primary-shade)' }}>
                   <h3 style={{ marginBottom: 4, fontSize: '1rem', fontWeight: 600 }}>
                     {product.name}
                   </h3>

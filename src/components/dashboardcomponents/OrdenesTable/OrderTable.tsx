@@ -67,15 +67,16 @@ const OrderTable: React.FC = () => {
             const lista = snapshot.docs.map((docSnap) => {
                 const data = docSnap.data();
                 const cliente = data.cliente || {};
+                // Manejo correcto de fecha Firestore Timestamp
                 const fecha = data.fecha
-                    ? new Date(data.fecha).toLocaleDateString()
+                    ? data.fecha.toDate().toLocaleDateString()
                     : 'Sin fecha';
 
                 return {
                     id: docSnap.id,
                     nombreCompleto: `${cliente.nombre || ''} ${cliente.apellido || ''}`.trim(),
                     estado: data.estado || 'En revisión',
-                    total: data.precioVenta || 0,
+                    total: Number(data.precioVenta) || 0, // conversión a número
                     fecha,
                 };
             });

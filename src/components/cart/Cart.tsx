@@ -1,36 +1,46 @@
 import React, { useState, useEffect } from "react";
-import { IonPage, IonContent, IonList, IonItem, IonLabel, IonButton, IonIcon } from "@ionic/react";
+import {
+  IonPage,
+  IonContent,
+  IonList,
+  IonItem,
+  IonLabel,
+  IonButton,
+  IonIcon,
+} from "@ionic/react";
 import { getCart, removeFromCart, clearCart } from "../../services/cartService";
 import { trashOutline } from "ionicons/icons";
 import { useHistory } from "react-router-dom";
-import Header from "../Header/Header"; // Ajusta la ruta según tu proyecto
+import Header from "../Header/Header";
 
 const Cart: React.FC = () => {
   const [cart, setCart] = useState<any[]>([]);
   const history = useHistory();
 
   useEffect(() => {
-    setCart(getCart());
+    const loadCart = async () => {
+      const items = await getCart();
+      setCart(items);
+      console.log("Carrito cargado:", items);
+    };
+    loadCart();
   }, []);
 
-  const handleRemove = (id: number) => {
-    removeFromCart(id);
-    setCart(getCart());
+  const handleRemove = async (id: number) => {
+    await removeFromCart(id);
+    const updated = await getCart();
+    setCart(updated);
   };
 
-  const handleCheckout = () => {
+  const handleCheckout = async () => {
     if (cart.length === 0) {
       return alert("El carrito está vacío");
     }
 
-    // Guardamos todo el carrito en localStorage
     localStorage.setItem("productoSeleccionado", JSON.stringify(cart));
-
-    // Redirigimos a Payment
     history.push("/payment");
 
-    // Opcional: limpiar carrito
-    clearCart();
+    await clearCart();
     setCart([]);
   };
 
@@ -48,12 +58,17 @@ const Cart: React.FC = () => {
                   <IonLabel>
                     {product.name} - ${product.price}
                   </IonLabel>
-                  <IonButton color="danger" fill="clear" onClick={() => handleRemove(product.id)}>
+                  <IonButton
+                    color="danger"
+                    fill="clear"
+                    onClick={() => handleRemove(product.id)}
+                  >
                     <IonIcon icon={trashOutline} />
                   </IonButton>
                 </IonItem>
               ))}
             </IonList>
+
             <IonButton expand="block" color="primary" onClick={handleCheckout}>
               Realizar Pedido
             </IonButton>

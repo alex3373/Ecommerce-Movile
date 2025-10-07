@@ -6,32 +6,30 @@
   --ion-color-danger-shade: #0a8284;
   --ion-color-danger-tint: #13a9ab;
 
-  --ion-color-primary: #0A9396; /* igual que tu danger */
+  --ion-color-primary: #0A9396;
   --ion-color-primary-rgb: 10, 147, 150;
   --ion-color-primary-contrast: #ffffff;
   --ion-color-primary-contrast-rgb: 255, 255, 255;
-  --ion-color-primary-shade: #0a8284;
+  --ion-color-primary-shade: #0b6163;
   --ion-color-primary-tint: #13a9ab;
 
-  --ion-color-secondary: #13a9ab; /* un tono distinto si quieres */
+  --ion-color-secondary: #13a9ab;
   --ion-color-secondary-rgb: 19, 169, 171;
   --ion-color-secondary-contrast: #ffffff;
   --ion-color-secondary-contrast-rgb: 255, 255, 255;
   --ion-color-secondary-shade: #119ea0;
   --ion-color-secondary-tint: #1cc1c3;
 
-  --ion-color-tertiary: #0a8284; /* otro tono si quieres */
+  --ion-color-tertiary: #0a8284;
   --ion-color-tertiary-rgb: 10, 130, 132;
   --ion-color-tertiary-contrast: #ffffff;
   --ion-color-tertiary-contrast-rgb: 255, 255, 255;
   --ion-color-tertiary-shade: #097075;
   --ion-color-tertiary-tint: #0c9aa0;
-
-  :root {
-  --ion-color-warning: #FFD700; /* dorado para favorito */
-  --ion-color-warning-contrast: #000000;
-
-  --ion-color-danger: #FF4C4C; /* rojo para eliminar */
-  --ion-color-danger-contrast: #ffffff;
 }
+
+/* 👇 Agrega esto al final */
+ion-content {
+  --padding-top: env(safe-area-inset-top);
+  --padding-bottom: env(safe-area-inset-bottom);
 }

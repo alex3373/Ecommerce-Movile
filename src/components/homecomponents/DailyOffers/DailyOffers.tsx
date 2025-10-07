@@ -135,11 +135,11 @@ useEffect(() => {
                 }}
               >
                 <div>
-                  <IonText color="dark">
-                    <h3 style={{ marginBottom: 4, fontSize: '1rem', fontWeight: 600 }}>
-                      {offer.name}
-                    </h3>
-                  </IonText>
+                  <IonText style={{ color: 'var(--ion-color-primary-shade)' }}>
+                <h3 style={{ marginBottom: 4, fontSize: '1rem', fontWeight: 600 }}>
+                  {offer.name}
+                </h3>
+              </IonText>
 
                   <IonText color="danger">
                     <p style={{ margin: 0, fontWeight: 700, fontSize: '0.9rem' }}>
