@@ -23,8 +23,7 @@
 - ⚛️ **React** + **Ionic Framework**
 - 🔥 **Firebase Authentication** y **Firestore**
 - 🌐 **Woocomerce API** (integración externa)
-- 💬 **Chat en tiempo real**
-- 💳 Flujo de compra con integración a **Flow.cl**
+- 💬 **Soporte en tiempo real**
 
 ---
 
