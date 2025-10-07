@@ -1,21 +1,21 @@
-### 🔐 Login Admin
-| <img src="https://github.com/user-attachments/assets/6594e209-9e24-4489-9325-95d3f2a462b7" width="30%"> | <img src="https://github.com/user-attachments/assets/4c5330b6-3321-4381-b27f-32ea51a7a289" width="30%"> | <img src="https://github.com/user-attachments/assets/ca27d708-2600-441b-9fe9-372bcf7c46a5" width="30%"> |
+### 🔐 Admin
+| <img src="https://github.com/user-attachments/assets/6594e209-9e24-4489-9325-95d3f2a462b7" width="45%"> | <img src="https://github.com/user-attachments/assets/4c5330b6-3321-4381-b27f-32ea51a7a289" width="45%"> | <img src="https://github.com/user-attachments/assets/ca27d708-2600-441b-9fe9-372bcf7c46a5" width="45%"> |
 |:--:|:--:|:--:|
-| **Inicio de sesión** | **Panel principal** | **Gestión de usuarios** |
+| **Login Admin** | **Activación/Desactivación de usuarios + Gráficos de ventas** | **Manejo de órdenes + Reportes y PDF** |
 
 ---
 
-### 🛒 Carrito y Órdenes
+### 🛒 Cliente
 | <img src="https://github.com/user-attachments/assets/a5c0d92b-f3ba-493a-aa97-ad96cc4a5553" width="45%"> | <img src="https://github.com/user-attachments/assets/21031ff1-72b5-4e94-96e9-f0da93e0ea9c" width="45%"> |
 |:--:|:--:|
-| **Vista del carrito** | **Detalle de orden** |
+| **Carrito + Orden** | **Perfil** |
 
 ---
 
 ### 💬 Soporte y Configuración
 | <img src="https://github.com/user-attachments/assets/7e7acdf4-a874-42da-aaf9-e19b6d784a5a" width="45%"> | <img src="https://github.com/user-attachments/assets/ed8969a4-fcae-4a2c-9b8e-ce974005ccbd" width="45%"> |
 |:--:|:--:|
-| **Centro de soporte** | **Opciones de configuración** |
+| **Centro de soporte Cliente** | **Vista Soporte Admin + Configuración + Estado Servidor** |
 
 
 ## Tecnologías principales
