@@ -1,32 +1,9 @@
-# 📦 Ecommerce App (Frontend)
-
-Aplicación móvil desarrollada con **Ionic + React + TypeScript**, enfocada en facilitar la compra y personalización de productos mediante integración con WooCommerce.  
-Los usuarios pueden explorar productos, realizar pedidos, comunicarse con el vendedor y gestionar su cuenta de forma segura.
-
----
-
-### 🔐 Login Admin
-<p align="center">
-  <img src="https://github.com/user-attachments/assets/6594e209-9e24-4489-9325-95d3f2a462b7" width="30%" style="margin-right:10px;" />
-  <img src="https://github.com/user-attachments/assets/4c5330b6-3321-4381-b27f-32ea51a7a289" width="30%" style="margin-right:10px;" />
-  <img src="https://github.com/user-attachments/assets/ca27d708-2600-441b-9fe9-372bcf7c46a5" width="30%" />
-</p>
-
----
-
-### 🛒 Carrito y Órdenes
-<p align="center">
-  <img src="https://github.com/user-attachments/assets/a5c0d92b-f3ba-493a-aa97-ad96cc4a5553" width="45%" style="margin-right:10px;" />
-  <img src="https://github.com/user-attachments/assets/21031ff1-72b5-4e94-96e9-f0da93e0ea9c" width="45%" />
-</p>
-
----
-
-### 💬 Soporte y Configuración
-<p align="center">
-  <img src="https://github.com/user-attachments/assets/7e7acdf4-a874-42da-aaf9-e19b6d784a5a" width="45%" style="margin-right:10px;" />
-  <img src="https://github.com/user-attachments/assets/ed8969a4-fcae-4a2c-9b8e-ce974005ccbd" width="45%" />
-</p>
+🔐 Login Admin
+<p align="center"> <figure style="display:inline-block; text-align:center; margin:10px;"> <img src="https://github.com/user-attachments/assets/6594e209-9e24-4489-9325-95d3f2a462b7" width="30%" /> <figcaption>Inicio de sesión</figcaption> </figure> <figure style="display:inline-block; text-align:center; margin:10px;"> <img src="https://github.com/user-attachments/assets/4c5330b6-3321-4381-b27f-32ea51a7a289" width="30%" /> <figcaption>Panel principal</figcaption> </figure> <figure style="display:inline-block; text-align:center; margin:10px;"> <img src="https://github.com/user-attachments/assets/ca27d708-2600-441b-9fe9-372bcf7c46a5" width="30%" /> <figcaption>Gestión de usuarios</figcaption> </figure> </p>
+🛒 Carrito y Órdenes
+<p align="center"> <figure style="display:inline-block; text-align:center; margin:10px;"> <img src="https://github.com/user-attachments/assets/a5c0d92b-f3ba-493a-aa97-ad96cc4a5553" width="45%" /> <figcaption>Vista del carrito</figcaption> </figure> <figure style="display:inline-block; text-align:center; margin:10px;"> <img src="https://github.com/user-attachments/assets/21031ff1-72b5-4e94-96e9-f0da93e0ea9c" width="45%" /> <figcaption>Detalle de orden</figcaption> </figure> </p>
+💬 Soporte y Configuración
+<p align="center"> <figure style="display:inline-block; text-align:center; margin:10px;"> <img src="https://github.com/user-attachments/assets/7e7acdf4-a874-42da-aaf9-e19b6d784a5a" width="45%" /> <figcaption>Centro de soporte</figcaption> </figure> <figure style="display:inline-block; text-align:center; margin:10px;"> <img src="https://github.com/user-attachments/assets/ed8969a4-fcae-4a2c-9b8e-ce974005ccbd" width="45%" /> <figcaption>Opciones de configuración</figcaption> </figure> </p>
 
 
 
