@@ -2,6 +2,47 @@
 
 Aplicación móvil desarrollada con **Ionic + React + TypeScript**, enfocada en facilitar la compra y personalización de productos mediante integración con WooCommerc. Los usuarios pueden explorar productos, realizar pedidos, comunicarse con el vendedor y gestionar su cuenta de forma segura.
 
+
+
+
+
+Soporte
+
+![Animation](https://github.com/user-attachments/assets/e2629f9e-e9a1-47ce-8a6c-7331132c25a0)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 ---
 
 ## Tecnologías principales
