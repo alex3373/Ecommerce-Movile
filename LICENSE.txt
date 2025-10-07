@@ -1,0 +1,12 @@
+Copyright (c) 2025 [alex3373]
+
+Todos los derechos reservados.
+
+Este software y todo su contenido (código fuente, documentación, imágenes, etc.) 
+están protegidos por derechos de autor. 
+
+Queda prohibida cualquier reproducción, distribución, modificación o uso 
+del código sin el permiso explícito y por escrito del autor.
+
+Para solicitar autorización de uso, contáctame en: [alexisandres311@gmail.com o perfil de GitHub]
+
