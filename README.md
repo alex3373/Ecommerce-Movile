@@ -1,21 +1,41 @@
+# 📦 Ecommerce App
+
+Aplicación móvil desarrollada con **Ionic + React + TypeScript**, enfocada en facilitar la compra y personalización de productos mediante integración con WooCommerce.  
+Los usuarios pueden explorar productos, realizar pedidos, comunicarse con el vendedor y gestionar su cuenta de forma segura.
+
+---
+
 ### 🔐 Admin
-| <img src="https://github.com/user-attachments/assets/6594e209-9e24-4489-9325-95d3f2a462b7" width="250px"> | <img src="https://github.com/user-attachments/assets/4c5330b6-3321-4381-b27f-32ea51a7a289" width="250px"> | <img src="https://github.com/user-attachments/assets/ca27d708-2600-441b-9fe9-372bcf7c46a5" width="250px"> |
+<div align="center">
+
+| <img src="https://github.com/user-attachments/assets/6594e209-9e24-4489-9325-95d3f2a462b7" width="230px" style="border-radius:12px; box-shadow: 0 4px 8px rgba(0,0,0,0.2);"> | <img src="https://github.com/user-attachments/assets/4c5330b6-3321-4381-b27f-32ea51a7a289" width="230px" style="border-radius:12px; box-shadow: 0 4px 8px rgba(0,0,0,0.2);"> | <img src="https://github.com/user-attachments/assets/ca27d708-2600-441b-9fe9-372bcf7c46a5" width="230px" style="border-radius:12px; box-shadow: 0 4px 8px rgba(0,0,0,0.2);"> |
 |:--:|:--:|:--:|
 | **Login Admin** | **Activación/Desactivación de usuarios + Gráficos de ventas** | **Manejo de órdenes + Reportes y PDF** |
+
+</div>
 
 ---
 
 ### 🛒 Cliente
-| <img src="https://github.com/user-attachments/assets/a5c0d92b-f3ba-493a-aa97-ad96cc4a5553" width="250px"> | <img src="https://github.com/user-attachments/assets/21031ff1-72b5-4e94-96e9-f0da93e0ea9c" width="250px"> |
+<div align="center">
+
+| <img src="https://github.com/user-attachments/assets/a5c0d92b-f3ba-493a-aa97-ad96cc4a5553" width="230px" style="border-radius:12px; box-shadow: 0 4px 8px rgba(0,0,0,0.2);"> | <img src="https://github.com/user-attachments/assets/21031ff1-72b5-4e94-96e9-f0da93e0ea9c" width="230px" style="border-radius:12px; box-shadow: 0 4px 8px rgba(0,0,0,0.2);"> |
 |:--:|:--:|
 | **Carrito + Orden** | **Perfil** |
+
+</div>
 
 ---
 
 ### 💬 Soporte y Configuración
-| <img src="https://github.com/user-attachments/assets/7e7acdf4-a874-42da-aaf9-e19b6d784a5a" width="250px"> | <img src="https://github.com/user-attachments/assets/ed8969a4-fcae-4a2c-9b8e-ce974005ccbd" width="250px"> |
+<div align="center">
+
+| <img src="https://github.com/user-attachments/assets/7e7acdf4-a874-42da-aaf9-e19b6d784a5a" width="230px" style="border-radius:12px; box-shadow: 0 4px 8px rgba(0,0,0,0.2);"> | <img src="https://github.com/user-attachments/assets/ed8969a4-fcae-4a2c-9b8e-ce974005ccbd" width="230px" style="border-radius:12px; box-shadow: 0 4px 8px rgba(0,0,0,0.2);"> |
 |:--:|:--:|
 | **Centro de soporte Cliente** | **Vista Soporte Admin + Configuración + Estado Servidor** |
+
+</div>
+
 
 
 
