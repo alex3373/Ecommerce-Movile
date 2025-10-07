@@ -5,7 +5,7 @@ Los usuarios pueden explorar productos, realizar pedidos, comunicarse con el ven
 
 ---
 
-### 🔐 Login Admin
+### 🔐 Login Admin, Activacion/Desactivacion de usuarios + Gráficos de ventas, Manejo de ordenes + Reportes y PDF
 <p align="center">
   <img src="https://github.com/user-attachments/assets/6594e209-9e24-4489-9325-95d3f2a462b7" width="30%" style="margin-right:10px;" />
   <img src="https://github.com/user-attachments/assets/4c5330b6-3321-4381-b27f-32ea51a7a289" width="30%" style="margin-right:10px;" />
@@ -14,18 +14,18 @@ Los usuarios pueden explorar productos, realizar pedidos, comunicarse con el ven
 
 ---
 
-### 🛒 Carrito y Órdenes
+### 🛒 Carrito y Órdenes, Perfil
 <p align="center">
-  <img src="https://github.com/user-attachments/assets/a5c0d92b-f3ba-493a-aa97-ad96cc4a5553" width="45%" style="margin-right:10px;" />
-  <img src="https://github.com/user-attachments/assets/21031ff1-72b5-4e94-96e9-f0da93e0ea9c" width="45%" />
+  <img src="https://github.com/user-attachments/assets/a5c0d92b-f3ba-493a-aa97-ad96cc4a5553" width="30%" style="margin-right:10px;" />
+  <img src="https://github.com/user-attachments/assets/21031ff1-72b5-4e94-96e9-f0da93e0ea9c" width="30%" />
 </p>
 
 ---
 
-### 💬 Soporte y Configuración
+### 💬 Soporte Cliente, Vista Soporte Admin + Configuración + Estado Servidor
 <p align="center">
-  <img src="https://github.com/user-attachments/assets/7e7acdf4-a874-42da-aaf9-e19b6d784a5a" width="45%" style="margin-right:10px;" />
-  <img src="https://github.com/user-attachments/assets/ed8969a4-fcae-4a2c-9b8e-ce974005ccbd" width="45%" />
+  <img src="https://github.com/user-attachments/assets/7e7acdf4-a874-42da-aaf9-e19b6d784a5a" width="30%" style="margin-right:10px;" />
+  <img src="https://github.com/user-attachments/assets/ed8969a4-fcae-4a2c-9b8e-ce974005ccbd" width="30%" />
 </p>
 
 
