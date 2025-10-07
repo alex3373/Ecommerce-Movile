@@ -144,8 +144,3 @@ VITE_FIREBASE_APP_ID=...
 
 ---
 
-## 🔒 Licencia
-
-Este proyecto se encuentra bajo la licencia [MIT](LICENSE).
-
----
