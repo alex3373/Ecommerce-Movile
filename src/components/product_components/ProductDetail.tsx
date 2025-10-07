@@ -9,7 +9,7 @@ import {
   IonText, 
   IonSpinner 
 } from "@ionic/react";
-import Header from "../../components/Header/Header";
+import Header from "../common/Header/Header";
 import ProductImage from "./ProductImage";
 import ProductInfo from "./ProductInfo";
 import { fetchWooProductById, WooProduct } from "../../services/apiEcommerce"; 

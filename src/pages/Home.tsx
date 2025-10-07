@@ -1,14 +1,14 @@
 import { IonContent, IonPage, IonIcon } from '@ionic/react';
-import Header from '../components/Header/Header';
+import Header from '../components/common/Header/Header';
 import Slider from '../components/homecomponents/Slider/Slider';
-import Searchbar from '../components/searchbarcomponents/Searchbar';
+import Searchbar from '../components/common/searchbarcomponents/Searchbar';
 import CategoryList from '../components/homecomponents/CategoryList/CategoryList';
 import ProductList from '../components/homecomponents/ProductList/ProductList1';
 import DailyOffers from '../components/homecomponents/DailyOffers/DailyOffers'; 
 import HowItWorks from '../components/homecomponents/HowItWorks/HowItWorks'; 
 import { useEffect, useState } from 'react';
 import { useHistory, useLocation } from 'react-router-dom';
-import LogoutButton from '../components/Logout/Logout';
+import LogoutButton from '../components/common/Logout/Logout';
 
 // Importar iconos de Ionicons
 import { storefrontOutline } from 'ionicons/icons';

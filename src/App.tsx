@@ -14,7 +14,7 @@ import { db } from './services/firebase';
 import Mantenimiento from './components/Mantenimiento/Mantenimiento';
 
 /* Componentes */
-import SideMenu from './components/SideMenu/SideMenu';
+import SideMenu from './components/common/SideMenu/SideMenu';
 import PrivateRoute from "./components/PrivateRoute";
 
 /* Páginas */

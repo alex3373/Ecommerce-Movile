@@ -18,7 +18,7 @@ import styles from "./Login.module.css";
 import { useHistory } from "react-router-dom";
 import { loginUser } from "../../../services/auth.service";
 import { registrarEventoAuditoria } from "../../../utils/auditoria";
-import Header from '../../../components/Header/Header';
+import Header from '../../../components/common/Header/Header';
 
 const Login = () => {
   const [email, setEmail] = useState("");

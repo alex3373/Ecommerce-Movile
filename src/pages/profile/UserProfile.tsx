@@ -23,7 +23,7 @@ import {
 import { useHistory } from "react-router-dom";
 import { auth, db } from "../../services/firebase";
 import { doc, getDoc } from "firebase/firestore";
-import Header from "../../components/Header/Header";
+import Header from "../../components/common/Header/Header";
 import "./UserProfile.css";
 
 // Si prefieres ocultar el avatar por completo, cámbialo a true

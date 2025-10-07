@@ -1,7 +1,7 @@
 import React from "react";
-import { registrarEventoAuditoria } from "../../utils/auditoria";
+import { registrarEventoAuditoria } from "../../../utils/auditoria";
 import { signOut } from "firebase/auth";
-import { auth } from "../../services/firebase";
+import { auth } from "../../../services/firebase";
 
 const LogoutButton: React.FC = () => {
     const handleLogout = async () => {

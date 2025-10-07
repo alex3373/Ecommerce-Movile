@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { IonIcon, IonPopover, IonContent } from '@ionic/react';
 import { notificationsOutline } from 'ionicons/icons';
-import { useNotificationContext } from '../../context/NotificationContext';
+import { useNotificationContext } from '../../../context/NotificationContext';
 import { useHistory } from 'react-router-dom';
 import './NotificationButton.css';
 

@@ -12,7 +12,7 @@ import {
 } from "@ionic/react";
 import { useState } from "react";
 import styles from "./Register.module.css";
-import Header from "../../../components/Header/Header";
+import Header from "../../../components/common/Header/Header";
 import { registerUser } from "../../../services/auth.service";
 import { useHistory } from "react-router-dom";
 import { registrarEventoAuditoria } from "../../../utils/auditoria";

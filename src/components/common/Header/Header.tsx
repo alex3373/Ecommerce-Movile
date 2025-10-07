@@ -12,8 +12,8 @@ import {
 import { cartOutline } from 'ionicons/icons';
 import { useHistory } from 'react-router-dom';
 import './Header.css';
-import NotificationButton from '../common/NotificationButton';
-import { auth } from '../../services/firebase';
+import NotificationButton from '../NotificationButton/NotificationButton';
+import { auth } from '../../../services/firebase';
 import { onAuthStateChanged, User } from 'firebase/auth';
 
 interface HeaderProps {

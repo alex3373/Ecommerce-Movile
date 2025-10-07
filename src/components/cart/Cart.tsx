@@ -11,7 +11,7 @@ import {
 import { getCart, removeFromCart, clearCart } from "../../services/cartService";
 import { trashOutline } from "ionicons/icons";
 import { useHistory } from "react-router-dom";
-import Header from "../Header/Header";
+import Header from "../common/Header/Header";
 
 const Cart: React.FC = () => {
   const [cart, setCart] = useState<any[]>([]);

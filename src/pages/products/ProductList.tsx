@@ -11,7 +11,7 @@ import {
   IonText,
 } from '@ionic/react';
 import { optionsOutline } from 'ionicons/icons';
-import Header from '../../components/Header/Header';
+import Header from '../../components/common/Header/Header';
 import ProductCard from '../../components/product_components/ProductCard';
 import { fetchWooProducts } from '../../services/apiEcommerce';
 import './ProductList.css';

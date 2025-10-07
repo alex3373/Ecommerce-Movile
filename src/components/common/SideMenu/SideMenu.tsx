@@ -26,7 +26,7 @@ import {
   chatbubblesOutline,
 } from 'ionicons/icons';
 
-import { getCurrentUser } from '../../utils/auth';
+import { getCurrentUser } from '../../../utils/auth';
 import { useLocation } from 'react-router-dom';
 import LogoutButton from '../Logout/Logout';
 

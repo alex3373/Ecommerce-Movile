@@ -18,7 +18,7 @@ import {
   calendarOutline,
   locationOutline,
 } from "ionicons/icons";
-import Header from "../../components/Header/Header";
+import Header from "../../components/common/Header/Header";
 import { useEffect, useState } from "react";
 import { auth, db } from "../../services/firebase";
 import { doc, getDoc, updateDoc } from "firebase/firestore";

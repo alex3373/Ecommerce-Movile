@@ -4,7 +4,7 @@ import {
 } from '@ionic/react';
 import { addDoc, collection, Timestamp } from 'firebase/firestore';
 import { auth, db } from '../../services/firebase';
-import Header from '../../components/Header/Header'; // Ajusta según tu ruta
+import Header from '../../components/common/Header/Header'; // Ajusta según tu ruta
 import './Payment.css';
 
 const Payment: React.FC = () => {

@@ -18,8 +18,8 @@ import {
   WooProduct,
 } from '../../services/apiEcommerce';
 import ProductCard from './ProductCard';
-import Searchbar from '../../components/searchbarcomponents/Searchbar';
-import Header from '../Header/Header';
+import Searchbar from '../common/searchbarcomponents/Searchbar';
+import Header from '../common/Header/Header';
 import './ProductList.css';
 
 const productsPerPage = 30;

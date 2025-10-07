@@ -17,7 +17,7 @@ import {
 } from '@ionic/react';
 import { useState, useEffect } from 'react';
 import { imageOutline, starOutline, documentTextOutline, colorPaletteOutline, constructOutline } from 'ionicons/icons';
-import Header from '../../components/Header/Header';
+import Header from '../../components/common/Header/Header';
 import '../media/media.css';
 
 interface Product {
