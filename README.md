@@ -4,16 +4,23 @@ Aplicación móvil desarrollada con **Ionic + React + TypeScript**, enfocada en 
 
 
 
+Login Admin
 
 
-Soporte
-
-![Animation](https://github.com/user-attachments/assets/e2629f9e-e9a1-47ce-8a6c-7331132c25a0)
+![Animation4](https://github.com/user-attachments/assets/6594e209-9e24-4489-9325-95d3f2a462b7)
 
 
+Activacion/Desactivacion de usuarios + Gráficos de ventas
+
+
+![Animation5](https://github.com/user-attachments/assets/4c5330b6-3321-4381-b27f-32ea51a7a289)
 
 
 
+Manejo de ordenes + Reportes y PDF
+
+
+![Animation6](https://github.com/user-attachments/assets/ca27d708-2600-441b-9fe9-372bcf7c46a5)
 
 
 
@@ -27,19 +34,19 @@ Carrito+Orden
 
 
 
+Perfil
+
+
+![Animation2](https://github.com/user-attachments/assets/21031ff1-72b5-4e94-96e9-f0da93e0ea9c)
 
 
 
 
+Soporte
 
 
 
-
-
-
-
-
-
+![Animation3](https://github.com/user-attachments/assets/7e7acdf4-a874-42da-aaf9-e19b6d784a5a)
 
 
 
