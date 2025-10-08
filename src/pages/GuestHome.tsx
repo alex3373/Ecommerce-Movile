@@ -6,7 +6,7 @@ import {
 } from '@ionic/react';
 import { useHistory } from 'react-router-dom';
 import { cartOutline, lockClosedOutline } from 'ionicons/icons';
-import Footer from '../components/Footer/Footer';
+import Footer from '../components/common/Footer/Footer';
 import DailyOffers from '../components/homecomponents/DailyOffers/DailyOffers';
 import HowItWorks from '../components/homecomponents/HowItWorks/HowItWorks';
 
