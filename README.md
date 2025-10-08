@@ -5,7 +5,7 @@ Los usuarios pueden explorar productos, realizar pedidos, comunicarse con el ven
 
 ---
 
-Pruebas realizadas en Android Studio, Emulador API 36.1
+Capturas realizadas en Android Studio, Emulador API 36.1
 
 ### 🔐 Admin
 <div align="center">
