@@ -2,7 +2,7 @@
 
 Aplicación móvil desarrollada con **Ionic + React + TypeScript**, enfocada en facilitar la compra y personalización de productos mediante integración con WooCommerce.  
 Los usuarios pueden explorar productos, realizar pedidos, comunicarse con el vendedor y gestionar su cuenta de forma segura.
-
+Repositorio del Backend en Django https://github.com/alex3373/BackendEcom
 ---
 
 Capturas realizadas en Android Studio, Emulador API 36.1
